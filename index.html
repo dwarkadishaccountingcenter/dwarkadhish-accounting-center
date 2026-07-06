@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dwarkadhish Accounting Center | Financial & Government Services in Rajkot</title>
+    <!-- Alternate Standard Bootstrap Icons CSS Link for High Compatibility -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         :root {
@@ -86,12 +87,11 @@
             margin: 0 auto 30px;
         }
 
-        /* Services Section */
+        /* Interactive Tabs Styling */
         .services-section {
             padding: 60px 5%;
             background-color: #ffffff;
             text-align: center;
-            display: block !important;
         }
 
         .section-title {
@@ -107,38 +107,80 @@
             color: #64748b;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto;
+        /* The Tab row buttons */
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto 30px;
         }
 
-        .service-card {
+        .tab-btn {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            border: 1px solid #cbd5e1;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            background-color: #f1f5f9;
+        }
+
+        .tab-btn.active {
+            background-color: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Tab content content wrapper */
+        .tab-content-wrapper {
+            max-width: 800px;
+            margin: 0 auto 40px;
             background: var(--light-bg);
-            padding: 25px;
-            border-radius: 8px;
             border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 30px;
             text-align: left;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
 
-        .service-card h3 {
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-panel h3 {
             color: var(--secondary-color);
             margin-top: 0;
-            font-size: 20px;
-            border-bottom: 2px solid #cbd5e1;
-            padding-bottom: 8px;
+            font-size: 24px;
             margin-bottom: 15px;
         }
 
-        .service-card ul {
+        .tab-panel ul {
             padding-left: 20px;
             margin: 0;
         }
 
-        .service-card li {
-            margin-bottom: 10px;
+        .tab-panel li {
+            font-size: 17px;
+            margin-bottom: 12px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5deg); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Gallery Section mapped to your specific files */
@@ -146,7 +188,6 @@
             background-color: var(--light-bg);
             padding: 60px 5%;
             text-align: center;
-            display: block !important;
             border-top: 1px solid #e2e8f0;
         }
 
@@ -163,6 +204,12 @@
             padding: 10px;
             border-radius: 8px;
             border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        /* Classes used for interactive gallery filtering */
+        .gallery-item.hidden {
+            display: none;
         }
 
         .gallery-item img {
@@ -249,91 +296,114 @@
         </a>
     </section>
 
+    <!-- Interactive Services Section -->
     <section class="services-section">
-        <div class="section-title">Our Comprehensive Services</div>
-        <div class="section-subtitle">We manage your investments, insurance policies, tax compliances, and official documents under one roof.</div>
+        <div class="section-title">Our Specialized Services</div>
+        <div class="section-subtitle">Click on any category tab below to view full details and service document cards.</div>
         
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Tax & Accounting</h3>
+        <!-- Interactive Navigation Tabs -->
+        <div class="tabs-container">
+            <button class="tab-btn active" onclick="switchTab(event, 'all')">All Services</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tax')">ITR & Tax</button>
+            <button class="tab-btn" onclick="switchTab(event, 'insurance')">Insurance</button>
+            <button class="tab-btn" onclick="switchTab(event, 'investment')">SIP & Mutual Funds</button>
+            <button class="tab-btn" onclick="switchTab(event, 'rto')">RTO & Driving</button>
+            <button class="tab-btn" onclick="switchTab(event, 'identity')">Identity Cards</button>
+        </div>
+
+        <!-- Information Panels Box -->
+        <div class="tab-content-wrapper">
+            <!-- Panel All -->
+            <div id="panel-all" class="tab-panel active">
+                <h3>Complete Business Solutions</h3>
+                <p style="font-size: 16px; margin: 0 0 10px 0;">Welcome to Dwarkadhish Accounting Center. We offer complete financial growth management, taxation filing setups, risk protections, and state-level registration solutions. Click any tab filter above to narrow down updates or explore your documents.</p>
+            </div>
+
+            <!-- Panel Tax -->
+            <div id="panel-tax" class="tab-panel">
+                <h3>Taxation & Business Compliance</h3>
                 <ul>
-                    <li><strong>Income Tax Return (ITR)</strong> preparation and e-filing</li>
-                    <li><strong>GST Registration</strong> and regular return filing</li>
-                    <li>Complete business bookkeeping and accounting services</li>
+                    <li><strong>Income Tax Returns (ITR):</strong> Accurate preparation and prompt e-filing for salaried persons, professionals, and business firms.</li>
+                    <li><strong>GST Setup & Compliance:</strong> Fresh GST registrations, modification filing, and systematic monthly/quarterly returns.</li>
+                    <li><strong>Corporate Bookkeeping:</strong> Systematic record-keeping, balance sheet preparation, and absolute ledger accounting.</li>
                 </ul>
             </div>
 
-            <div class="service-card">
-                <h3>Insurance Services</h3>
+            <!-- Panel Insurance -->
+            <div id="panel-insurance" class="tab-panel">
+                <h3>Comprehensive Insurance Protection</h3>
                 <ul>
-                    <li><strong>Life Insurance</strong> policies for family security</li>
-                    <li><strong>Health Insurance</strong> and medical claim setups</li>
-                    <li><strong>Vehicle Insurance</strong> (Car & Bike Insurance)</li>
-                    <li>General Insurance plans for business risk protection</li>
+                    <li><strong>Life Insurance:</strong> Complete policy consulting for securing family financial futures and future wealth planning.</li>
+                    <li><strong>Health & Medical Schemes:</strong> Custom family health coverage and professional claims configuration.</li>
+                    <li><strong>Motor Insurance:</strong> Spot coverage policies for absolute private cars, commercial transports, and two-wheelers.</li>
                 </ul>
             </div>
 
-            <div class="service-card">
-                <h3>Investments</h3>
+            <!-- Panel Investment -->
+            <div id="panel-investment" class="tab-panel">
+                <h3>SIP & Investment Consultations</h3>
                 <ul>
-                    <li><strong>Mutual Funds</strong> consulting & investments</li>
-                    <li><strong>SIP (Systematic Investment Plan)</strong> registration</li>
-                    <li>Wealth advisory and long-term financial planning</li>
+                    <li><strong>Systematic Investment Plans (SIP):</strong> Long-term compound wealth construction plans adjusted for customized micro-budgets.</li>
+                    <li><strong>Mutual Funds Allocation:</strong> Diversified equity, debt, and balanced asset investment optimization setups.</li>
+                    <li><strong>Demat Account Services:</strong> Seamless digital account setups to manage your direct stock, bond, and investment assets.</li>
                 </ul>
             </div>
 
-            <div class="service-card">
-                <h3>Identity Cards & Documents</h3>
+            <!-- Panel RTO -->
+            <div id="panel-rto" class="tab-panel">
+                <h3>RTO Assistance & Business Registration</h3>
                 <ul>
-                    <li>New <strong>PAN Card</strong> application and data corrections</li>
-                    <li>Fresh and Renewal <strong>Passport</strong> file submissions</li>
+                    <li><strong>Driving License Files:</strong> Seamless file preparation for fresh Learner's Permits and permanent Commercial or Personal Driving Licenses.</li>
+                    <li><strong>MSME Udyam Registration:</strong> Instant micro-business registrations to acquire central government subsidies, certificates, and easier bank financing.</li>
+                    <li><strong>RTO Paperwork Assistance:</strong> Ownership transfer document files, hypothecation additions, and smart card configurations.</li>
                 </ul>
             </div>
 
-            <div class="service-card">
-                <h3>Business & RTO Services</h3>
+            <!-- Panel Identity -->
+            <div id="panel-identity" class="tab-panel">
+                <h3>Identity Cards & Government Document Management</h3>
                 <ul>
-                    <li>MSME <strong>Udyam Aadhaar</strong> registration</li>
-                    <li>New <strong>Driving License</strong> & learning file assistance</li>
-                    <li><strong>RTO Services</strong> and vehicle documentation paperwork</li>
+                    <li><strong>PAN Card Registrations:</strong> Permanent Account Number submissions, profile name corrections, and physical card print orders.</li>
+                    <li><strong>Passport Application Management:</strong> Fresh Passport filings, documentation checks, and urgent Tatkaal application updates.</li>
                 </ul>
             </div>
         </div>
     </section>
 
+    <!-- Gallery Grid Mapped to your exact files with category data attributes -->
     <section class="gallery-section">
         <div class="section-title">Our Service Gallery</div>
-        <div class="section-subtitle">Browse through our authorized registration services and setup options.</div>
-        <div class="gallery-grid">
-            <div class="gallery-item">
+        <div class="section-subtitle">Visual materials and verified configuration formats for our primary services.</div>
+        <div class="gallery-grid" id="galleryGrid">
+            <div class="gallery-item" data-category="investment">
                 <img src="demat.jpg.png" alt="Demat Account Services">
                 <p>Demat Account</p>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" data-category="rto">
                 <img src="driving.jpg.jpeg" alt="Driving License File Services">
                 <p>Driving License</p>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" data-category="insurance">
                 <img src="insurance.jpg.jpeg" alt="All Type Insurance Setup">
                 <p>Insurance Services</p>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" data-category="identity">
                 <img src="pan.jpg.jpeg" alt="PAN Card Processing">
                 <p>PAN Card Services</p>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" data-category="identity">
                 <img src="passport.jpg.jpeg" alt="Passport Application Assistance">
                 <p>Passport Services</p>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" data-category="investment">
                 <img src="sip.jpg.png" alt="SIP & Investment Consulting">
                 <p>SIP Investments</p>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" data-category="rto">
                 <img src="udyam.jpg.png" alt="MSME Udyam Aadhaar Registration">
                 <p>Udyam Registration</p>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item" data-category="all">
                 <img src="office.jpg.png" alt="Dwarkadhish Accounting Center Office">
                 <p>Our Office</p>
             </div>
@@ -362,5 +432,38 @@
         <p>&copy; 2026 Dwarkadhish Accounting Center. All Rights Reserved.</p>
     </footer>
 
+    <!-- Interactive Tabs script logic -->
+    <script>
+        function switchTab(event, categoryId) {
+            // 1. Manage Active Tab Buttons Styling
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            // 2. Manage Active Informational Panels
+            const panels = document.querySelectorAll('.tab-panel');
+            panels.forEach(panel => panel.classList.remove('active'));
+            
+            const selectedPanel = document.getElementById('panel-' + categoryId);
+            if (selectedPanel) {
+                selectedPanel.classList.add('active');
+            } else {
+                // If it's 'all' tab, we fall back to general panel
+                document.getElementById('panel-all').classList.add('active');
+            }
+
+            // 3. Filter Image Gallery Items based on selected tab category
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                
+                if (categoryId === 'all' || itemCategory === categoryId || itemCategory === 'all') {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
