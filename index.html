@@ -19,12 +19,12 @@
       line-height: 1.6;
     }
 
-    /* 1. Navigation Bar */
+    /* 1. Navigation Bar with Logo Image */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
+      padding: 15px 40px;
       background-color: #ffffff;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       position: sticky;
@@ -32,12 +32,10 @@
       z-index: 1000;
     }
 
-    .text-logo {
-      font-size: 22px;
-      font-weight: 700;
-      color: #1a365d;
-      text-decoration: none;
-      letter-spacing: 0.5px;
+    .navbar-logo img {
+      height: 60px; /* Adjust height to make your logo stand out perfectly */
+      width: auto;  
+      display: block;
     }
 
     .nav-links {
@@ -58,69 +56,61 @@
       color: #3182ce;
     }
 
-    /* 2. Container */
+    /* 2. Main Layout Layout Container */
     .container {
       max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
+      text-align: center;
     }
 
-    /* 3. Business Profile Section */
-    .profile-card {
-      background: linear-gradient(135deg, #1a365d 0%, #2a4365 100%);
-      color: #ffffff;
-      padding: 40px;
+    /* 3. Banner Image Showcase */
+    .banner-container {
+      width: 100%;
+      margin-bottom: 40px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .banner-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* 4. Business Card Panel Showcase */
+    .card-section {
+      background-color: #ffffff;
+      padding: 35px;
       border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(26, 54, 93, 0.15);
-      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      display: inline-block;
       margin-bottom: 50px;
     }
 
-    .profile-card h1 {
-      font-size: 32px;
+    .card-section h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #1a365d;
       font-weight: 600;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
     }
 
-    .profile-card p {
-      font-size: 16px;
-      color: #ebf8ff;
-      opacity: 0.9;
-      margin-bottom: 25px;
-    }
-
-    .card-details {
-      background-color: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 20px;
+    .visiting-card-img {
+      max-width: 100%;
+      height: auto;
+      width: 500px; /* Perfectly displays your digital visiting card dimensions */
       border-radius: 8px;
-      display: inline-block;
-      text-align: left;
-      min-width: 280px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
-    .card-item {
-      font-size: 14px;
-      margin-bottom: 8px;
-      color: #e2e8f0;
-    }
-    
-    .card-item strong {
-      color: #ffffff;
-    }
-
-    .card-item:last-child {
-      margin-bottom: 0;
-    }
-
-    /* 4. Document Grid */
+    /* 5. Modern Bottom Grid Options */
     .section-title {
       font-size: 22px;
       font-weight: 600;
       color: #2d3748;
       margin-bottom: 20px;
-      text-align: center;
     }
 
     .doc-grid {
@@ -137,13 +127,12 @@
       background-color: #ffffff;
       text-decoration: none;
       color: #2d3748;
-      padding: 25px 20px;
+      padding: 22px 20px;
       border-radius: 12px;
       font-weight: 600;
       border: 1px solid #e2e8f0;
       box-shadow: 0 4px 6px rgba(0,0,0,0.02);
       transition: all 0.25s ease;
-      text-align: center;
     }
 
     .doc-button span {
@@ -159,7 +148,7 @@
       box-shadow: 0 10px 20px rgba(49, 130, 206, 0.1);
     }
 
-    /* Responsive Adjustments */
+    /* Mobile Quick Fixes */
     @media (max-width: 768px) {
       .navbar {
         flex-direction: column;
@@ -171,10 +160,7 @@
         justify-content: center;
         gap: 15px;
       }
-      .profile-card {
-        padding: 30px 20px;
-      }
-      .card-details {
+      .visiting-card-img {
         width: 100%;
       }
     }
@@ -182,9 +168,12 @@
 </head>
 <body>
 
-  <!-- Navigation Header -->
   <nav class="navbar">
-    <a href="#" class="text-logo">DWARKADHISH ACCOUNTING</a>
+    <div class="navbar-logo">
+      <a href="#">
+        <img src="./logo.png" alt="Dwarkadhish Accounting Logo">
+      </a>
+    </div>
     
     <ul class="nav-links">
       <li><a href="./udyam.jpg.png" target="_blank">Udyam Reg</a></li>
@@ -194,40 +183,35 @@
     </ul>
   </nav>
 
-  <!-- Main Content Dashboard -->
   <main class="container">
+
+    <div class="banner-container">
+      <img src="./banner.png" alt="Dwarkadhish Accounting Banner" class="banner-img">
+    </div>
     
-    <!-- Business Profile Panel -->
-    <section class="profile-card">
-      <h1>Dwarkadhish Accounting Center</h1>
-      <p>Digital Profile & Document Desk</p>
-      
-      <div class="card-details">
-        <div class="card-item"><strong>Status:</strong> Active & Verified</div>
-        <div class="card-item"><strong>Services:</strong> Accounting & Registration</div>
-        <div class="card-item"><strong>Location:</strong> Rajkot, Gujarat</div>
-      </div>
+    <section class="card-section">
+      <h2>Business Profile Card</h2>
+      <img src="./visiting.png" alt="Dwarkadhish Business Card" class="visiting-card-img">
     </section>
 
-    <!-- Document Access Dashboard -->
     <section>
       <h2 class="section-title">Verified Digital Records</h2>
       <div class="doc-grid">
         <a href="./pan.jpg.jpeg" target="_blank" class="doc-button">
           PAN Card
-          <span>View Image</span>
+          <span>View Verification File</span>
         </a>
         <a href="./passport.jpg.jpeg" target="_blank" class="doc-button">
           Passport
-          <span>View Image</span>
+          <span>View Verification File</span>
         </a>
         <a href="./office.jpg.png" target="_blank" class="doc-button">
           Office Photo
-          <span>View Image</span>
+          <span>View Verification File</span>
         </a>
         <a href="./sip.jpg.png" target="_blank" class="doc-button">
           SIP Details
-          <span>View Image</span>
+          <span>View Verification File</span>
         </a>
       </div>
     </section>
