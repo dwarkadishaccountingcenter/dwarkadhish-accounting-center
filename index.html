@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Business Profile & Documents</title>
+  <title>Dwarkadhish Accounting Center</title>
   <style>
     /* Reset & Base Styles */
     * {
@@ -19,7 +19,7 @@
       line-height: 1.6;
     }
 
-    /* 1. Elegant Header & Text Logo */
+    /* 1. Navigation Bar */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -32,9 +32,8 @@
       z-index: 1000;
     }
 
-    /* Clean Text Logo styling so it never looks broken */
     .text-logo {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 700;
       color: #1a365d;
       text-decoration: none;
@@ -59,14 +58,14 @@
       color: #3182ce;
     }
 
-    /* 2. Layout Container */
+    /* 2. Container */
     .container {
       max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
     }
 
-    /* 3. Text-Based Digital Visiting Card */
+    /* 3. Business Profile Section */
     .profile-card {
       background: linear-gradient(135deg, #1a365d 0%, #2a4365 100%);
       color: #ffffff;
@@ -91,7 +90,6 @@
       margin-bottom: 25px;
     }
 
-    /* A clean visual placeholder for your card details */
     .card-details {
       background-color: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2);
@@ -116,7 +114,7 @@
       margin-bottom: 0;
     }
 
-    /* 4. Document Dashboard Section */
+    /* 4. Document Grid */
     .section-title {
       font-size: 22px;
       font-weight: 600;
@@ -145,6 +143,7 @@
       border: 1px solid #e2e8f0;
       box-shadow: 0 4px 6px rgba(0,0,0,0.02);
       transition: all 0.25s ease;
+      text-align: center;
     }
 
     .doc-button span {
@@ -160,7 +159,7 @@
       box-shadow: 0 10px 20px rgba(49, 130, 206, 0.1);
     }
 
-    /* Responsive adjustments */
+    /* Responsive Adjustments */
     @media (max-width: 768px) {
       .navbar {
         flex-direction: column;
@@ -183,10 +182,8 @@
 </head>
 <body>
 
-  <!-- Navigation Header -->
   <nav class="navbar">
-    <!-- Styled as clean text so it never breaks or shows an error icon -->
-    <a href="#" class="text-logo">MY PORTFOLIO</a>
+    <a href="#" class="text-logo">DWARKADHISH ACCOUNTING</a>
     
     <ul class="nav-links">
       <li><a href="./udyam.jpg.png" target="_blank">Udyam Reg</a></li>
@@ -196,40 +193,37 @@
     </ul>
   </nav>
 
-  <!-- Main Content Dashboard -->
   <main class="container">
     
-    <!-- CSS Styled Profile Card Dashboard -->
     <section class="profile-card">
-      <h1>Business Profile</h1>
-      <p>Digital Business Dashboard & Verification Desk</p>
+      <h1>Dwarkadhish Accounting Center</h1>
+      <p>Digital Profile & Document Desk</p>
       
       <div class="card-details">
-        <div class="card-item"><strong>Status:</strong> Verified Records</div>
+        <div class="card-item"><strong>Status:</strong> Active & Verified</div>
+        <div class="card-item"><strong>Services:</strong> Accounting & Registration</div>
         <div class="card-item"><strong>Location:</strong> Rajkot, Gujarat</div>
-        <div class="card-item"><strong>Access:</strong> Secure Public Directory</div>
       </div>
     </section>
 
-    <!-- Document Access Grid -->
     <section>
-      <h2 class="section-title">Verified Verification Vault</h2>
+      <h2 class="section-title">Verified Digital Records</h2>
       <div class="doc-grid">
         <a href="./pan.jpg.jpeg" target="_blank" class="doc-button">
           PAN Card
-          <span>View JPEG Image</span>
+          <span>View Image</span>
         </a>
         <a href="./passport.jpg.jpeg" target="_blank" class="doc-button">
           Passport
-          <span>View JPEG Image</span>
+          <span>View Image</span>
         </a>
         <a href="./office.jpg.png" target="_blank" class="doc-button">
           Office Photo
-          <span>View PNG Image</span>
+          <span>View Image</span>
         </a>
         <a href="./sip.jpg.png" target="_blank" class="doc-button">
           SIP Details
-          <span>View PNG Image</span>
+          <span>View Image</span>
         </a>
       </div>
     </section>
