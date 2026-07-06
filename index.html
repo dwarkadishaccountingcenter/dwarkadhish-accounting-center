@@ -1,222 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dwarkadhish Accounting Center</title>
-  <style>
-    /* Reset & Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dwarkadhish Accounting Center | Financial & Government Services in Rajkot</title>
+    <!-- Alternate Standard Bootstrap Icons CSS Link for High Compatibility -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #0f172a; 
+            --secondary-color: #2563eb; 
+            --text-color: #334155;
+            --light-bg: #f8fafc;
+            --whatsapp-color: #25d366;
+            --facebook-color: #1877f2;
+            --instagram-color: #e1306c;
+        }
 
-    body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background-color: #f4f7f6;
-      color: #2d3748;
-      line-height: 1.6;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
 
-    /* 1. Navigation Bar with Logo Image */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-      background-color: #ffffff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-    .navbar-logo img {
-      height: 60px; /* Adjust height to make your logo stand out perfectly */
-      width: auto;  
-      display: block;
-    }
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
 
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
-    .nav-links a {
-      text-decoration: none;
-      color: #4a5568;
-      font-weight: 500;
-      font-size: 15px;
-      transition: color 0.2s ease;
-    }
+        .social-icons-header a {
+            font-size: 26px;
+            margin-left: 15px;
+            text-decoration: none;
+            display: inline-block;
+        }
 
-    .nav-links a:hover {
-      color: #3182ce;
-    }
+        .social-icons-header .bi-whatsapp { color: var(--whatsapp-color); }
+        .social-icons-header .bi-facebook { color: var(--facebook-color); }
+        .social-icons-header .bi-instagram { color: var(--instagram-color); }
 
-    /* 2. Main Layout Layout Container */
-    .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
+        .cta-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
 
-    /* 3. Banner Image Showcase */
-    .banner-container {
-      width: 100%;
-      margin-bottom: 40px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: white;
+            padding: 60px 5%;
+            text-align: center;
+        }
 
-    .banner-img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
 
-    /* 4. Business Card Panel Showcase */
-    .card-section {
-      background-color: #ffffff;
-      padding: 35px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      display: inline-block;
-      margin-bottom: 50px;
-    }
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
 
-    .card-section h2 {
-      margin-bottom: 20px;
-      font-size: 24px;
-      color: #1a365d;
-      font-weight: 600;
-    }
+        /* Interactive Tabs Styling */
+        .services-section {
+            padding: 60px 5%;
+            background-color: #ffffff;
+            text-align: center;
+        }
 
-    .visiting-card-img {
-      max-width: 100%;
-      height: auto;
-      width: 500px; /* Perfectly displays your digital visiting card dimensions */
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
+        .section-title {
+            font-size: 30px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
 
-    /* 5. Modern Bottom Grid Options */
-    .section-title {
-      font-size: 22px;
-      font-weight: 600;
-      color: #2d3748;
-      margin-bottom: 20px;
-    }
+        .section-subtitle {
+            font-size: 16px;
+            margin-bottom: 40px;
+            color: #64748b;
+        }
 
-    .doc-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
+        /* The Tab row buttons */
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto 30px;
+        }
 
-    .doc-button {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: #ffffff;
-      text-decoration: none;
-      color: #2d3748;
-      padding: 22px 20px;
-      border-radius: 12px;
-      font-weight: 600;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-      transition: all 0.25s ease;
-    }
+        .tab-btn {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            border: 1px solid #cbd5e1;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-    .doc-button span {
-      font-size: 14px;
-      color: #718096;
-      font-weight: 400;
-      margin-top: 5px;
-    }
+        .tab-btn:hover {
+            background-color: #f1f5f9;
+        }
 
-    .doc-button:hover {
-      border-color: #3182ce;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(49, 130, 206, 0.1);
-    }
+        .tab-btn.active {
+            background-color: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
 
-    /* Mobile Quick Fixes */
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-      }
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-      }
-      .visiting-card-img {
-        width: 100%;
-      }
-    }
-  </style>
+        /* Tab content content wrapper */
+        .tab-content-wrapper {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            background: var(--light-bg);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: left;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-panel h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .tab-panel ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .tab-panel li {
+            font-size: 17px;
+            margin-bottom: 12px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5deg); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Gallery Section mapped to your specific files */
+        .gallery-section {
+            background-color: var(--light-bg);
+            padding: 60px 5%;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        /* Classes used for interactive gallery filtering */
+        .gallery-item.hidden {
+            display: none;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            background-color: #ffffff;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .gallery-item p {
+            margin: 8px 0 0 0;
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: #ffffff;
+            padding: 60px 5%;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .address, .phone {
+            font-size: 18px;
+            margin: 15px 0;
+        }
+
+        .phone a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        .social-links-footer {
+            margin-bottom: 25px;
+        }
+
+        .social-links-footer a {
+            color: white;
+            text-decoration: none;
+            font-size: 32px;
+            margin: 0 15px;
+            display: inline-block;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+    </style>
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="navbar-logo">
-      <a href="#">
-        <img src="./logo.png" alt="Dwarkadhish Accounting Logo">
-      </a>
-    </div>
-    
-    <ul class="nav-links">
-      <li><a href="./udyam.jpg.png" target="_blank">Udyam Reg</a></li>
-      <li><a href="./demat.jpg.png" target="_blank">Demat</a></li>
-      <li><a href="./insurance.jpg.jpeg" target="_blank">Insurance</a></li>
-      <li><a href="./driving.jpg.jpeg" target="_blank">Driving License</a></li>
-    </ul>
-  </nav>
+    <header>
+        <div class="logo">Dwarkadhish Accounting Center</div>
+        <div class="header-right">
+            <div class="social-icons-header">
+                <a href="https://wa.me/919724185433" target="_blank" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                <a href="https://www.facebook.com/share/19JRCbjtgh/" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/dwarkadhishaaccounting?igsh=Mm04a3YwbHFmMWph" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+            </div>
+            <a href="tel:+919724185433" class="cta-btn">Call Center</a>
+        </div>
+    </header>
 
-  <main class="container">
-
-    <div class="banner-container">
-      <img src="./banner.png" alt="Dwarkadhish Accounting Banner" class="banner-img">
-    </div>
-    
-    <section class="card-section">
-      <h2>Business Profile Card</h2>
-      <img src="./visiting.png" alt="Dwarkadhish Business Card" class="visiting-card-img">
+    <section class="hero">
+        <h1>Financial, Insurance, Investment & Government Services</h1>
+        <p>Your comprehensive center for ITR Filing, Mutual Funds, Life & General Insurance, and essential Government Registrations in Rajkot.</p>
+        <a href="https://wa.me/919724185433" target="_blank" class="cta-btn" style="background-color: var(--whatsapp-color); display: inline-flex; align-items: center; gap: 10px; border: none;">
+            <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+        </a>
     </section>
 
-    <section>
-      <h2 class="section-title">Verified Digital Records</h2>
-      <div class="doc-grid">
-        <a href="./pan.jpg.jpeg" target="_blank" class="doc-button">
-          PAN Card
-          <span>View Verification File</span>
-        </a>
-        <a href="./passport.jpg.jpeg" target="_blank" class="doc-button">
-          Passport
-          <span>View Verification File</span>
-        </a>
-        <a href="./office.jpg.png" target="_blank" class="doc-button">
-          Office Photo
-          <span>View Verification File</span>
-        </a>
-        <a href="./sip.jpg.png" target="_blank" class="doc-button">
-          SIP Details
-          <span>View Verification File</span>
-        </a>
-      </div>
+    <!-- Interactive Services Section -->
+    <section class="services-section">
+        <div class="section-title">Our Specialized Services</div>
+        <div class="section-subtitle">Click on any category tab below to view full details and service document cards.</div>
+        
+        <!-- Interactive Navigation Tabs -->
+        <div class="tabs-container">
+            <button class="tab-btn active" onclick="switchTab(event, 'all')">All Services</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tax')">ITR & Tax</button>
+            <button class="tab-btn" onclick="switchTab(event, 'insurance')">Insurance</button>
+            <button class="tab-btn" onclick="switchTab(event, 'investment')">SIP & Mutual Funds</button>
+            <button class="tab-btn" onclick="switchTab(event, 'rto')">RTO & Driving</button>
+            <button class="tab-btn" onclick="switchTab(event, 'identity')">Identity Cards</button>
+        </div>
+
+        <!-- Information Panels Box -->
+        <div class="tab-content-wrapper">
+            <!-- Panel All -->
+            <div id="panel-all" class="tab-panel active">
+                <h3>Complete Business Solutions</h3>
+                <p style="font-size: 16px; margin: 0 0 10px 0;">Welcome to Dwarkadhish Accounting Center. We offer complete financial growth management, taxation filing setups, risk protections, and state-level registration solutions. Click any tab filter above to narrow down updates or explore your documents.</p>
+            </div>
+
+            <!-- Panel Tax -->
+            <div id="panel-tax" class="tab-panel">
+                <h3>Taxation & Business Compliance</h3>
+                <ul>
+                    <li><strong>Income Tax Returns (ITR):</strong> Accurate preparation and prompt e-filing for salaried persons, professionals, and business firms.</li>
+                    <li><strong>GST Setup & Compliance:</strong> Fresh GST registrations, modification filing, and systematic monthly/quarterly returns.</li>
+                    <li><strong>Corporate Bookkeeping:</strong> Systematic record-keeping, balance sheet preparation, and absolute ledger accounting.</li>
+                </ul>
+            </div>
+
+            <!-- Panel Insurance -->
+            <div id="panel-insurance" class="tab-panel">
+                <h3>Comprehensive Insurance Protection</h3>
+                <ul>
+                    <li><strong>Life Insurance:</strong> Complete policy consulting for securing family financial futures and future wealth planning.</li>
+                    <li><strong>Health & Medical Schemes:</strong> Custom family health coverage and professional claims configuration.</li>
+                    <li><strong>Motor Insurance:</strong> Spot coverage policies for absolute private cars, commercial transports, and two-wheelers.</li>
+                </ul>
+            </div>
+
+            <!-- Panel Investment -->
+            <div id="panel-investment" class="tab-panel">
+                <h3>SIP & Investment Consultations</h3>
+                <ul>
+                    <li><strong>Systematic Investment Plans (SIP):</strong> Long-term compound wealth construction plans adjusted for customized micro-budgets.</li>
+                    <li><strong>Mutual Funds Allocation:</strong> Diversified equity, debt, and balanced asset investment optimization setups.</li>
+                    <li><strong>Demat Account Services:</strong> Seamless digital account setups to manage your direct stock, bond, and investment assets.</li>
+                </ul>
+            </div>
+
+            <!-- Panel RTO -->
+            <div id="panel-rto" class="tab-panel">
+                <h3>RTO Assistance & Business Registration</h3>
+                <ul>
+                    <li><strong>Driving License Files:</strong> Seamless file preparation for fresh Learner's Permits and permanent Commercial or Personal Driving Licenses.</li>
+                    <li><strong>MSME Udyam Registration:</strong> Instant micro-business registrations to acquire central government subsidies, certificates, and easier bank financing.</li>
+                    <li><strong>RTO Paperwork Assistance:</strong> Ownership transfer document files, hypothecation additions, and smart card configurations.</li>
+                </ul>
+            </div>
+
+            <!-- Panel Identity -->
+            <div id="panel-identity" class="tab-panel">
+                <h3>Identity Cards & Government Document Management</h3>
+                <ul>
+                    <li><strong>PAN Card Registrations:</strong> Permanent Account Number submissions, profile name corrections, and physical card print orders.</li>
+                    <li><strong>Passport Application Management:</strong> Fresh Passport filings, documentation checks, and urgent Tatkaal application updates.</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
-  </main>
+    <!-- Gallery Grid Mapped to your exact files with category data attributes -->
+    <section class="gallery-section">
+        <div class="section-title">Our Service Gallery</div>
+        <div class="section-subtitle">Visual materials and verified configuration formats for our primary services.</div>
+        <div class="gallery-grid" id="galleryGrid">
+            <div class="gallery-item" data-category="investment">
+                <img src="demat.jpg.png" alt="Demat Account Services">
+                <p>Demat Account</p>
+            </div>
+            <div class="gallery-item" data-category="rto">
+                <img src="driving.jpg.jpeg" alt="Driving License File Services">
+                <p>Driving License</p>
+            </div>
+            <div class="gallery-item" data-category="insurance">
+                <img src="insurance.jpg.jpeg" alt="All Type Insurance Setup">
+                <p>Insurance Services</p>
+            </div>
+            <div class="gallery-item" data-category="identity">
+                <img src="pan.jpg.jpeg" alt="PAN Card Processing">
+                <p>PAN Card Services</p>
+            </div>
+            <div class="gallery-item" data-category="identity">
+                <img src="passport.jpg.jpeg" alt="Passport Application Assistance">
+                <p>Passport Services</p>
+            </div>
+            <div class="gallery-item" data-category="investment">
+                <img src="sip.jpg.png" alt="SIP & Investment Consulting">
+                <p>SIP Investments</p>
+            </div>
+            <div class="gallery-item" data-category="rto">
+                <img src="udyam.jpg.png" alt="MSME Udyam Aadhaar Registration">
+                <p>Udyam Registration</p>
+            </div>
+            <div class="gallery-item" data-category="all">
+                <img src="office.jpg.png" alt="Dwarkadhish Accounting Center Office">
+                <p>Our Office</p>
+            </div>
+        </div>
+    </section>
 
+    <section class="contact-section">
+        <div class="section-title">Contact Us</div>
+        <p>Get in touch or visit our office to get your applications processed fast.</p>
+        <div class="phone">
+            <strong>Mobile Number: </strong><a href="tel:+919724185433">9724185433</a>
+        </div>
+        <div class="address">
+            <strong>Office Address: </strong><br>
+            305, VV Commercial Complex, Bhutkhana Chowk,<br>
+            Near ST Bus Station, Rajkot, Gujarat 360002
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links-footer">
+            <a href="https://wa.me/919724185433" target="_blank"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://www.facebook.com/share/19JRCbjtgh/" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/dwarkadhishaaccounting?igsh=Mm04a3YwbHFmMWph" target="_blank"><i class="bi bi-instagram"></i></a>
+        </div>
+        <p>&copy; 2026 Dwarkadhish Accounting Center. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Interactive Tabs script logic -->
+    <script>
+        function switchTab(event, categoryId) {
+            // 1. Manage Active Tab Buttons Styling
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            // 2. Manage Active Informational Panels
+            const panels = document.querySelectorAll('.tab-panel');
+            panels.forEach(panel => panel.classList.remove('active'));
+            
+            const selectedPanel = document.getElementById('panel-' + categoryId);
+            if (selectedPanel) {
+                selectedPanel.classList.add('active');
+            } else {
+                // If it's 'all' tab, we fall back to general panel
+                document.getElementById('panel-all').classList.add('active');
+            }
+
+            // 3. Filter Image Gallery Items based on selected tab category
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                
+                if (categoryId === 'all' || itemCategory === categoryId || itemCategory === 'all') {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
