@@ -9,9 +9,10 @@
     <style>
         :root {
             --primary-color: #0f172a; 
-            --secondary-color: #2563eb; 
+            --secondary-color: #0284c7; 
             --text-color: #334155;
             --light-bg: #f8fafc;
+            --border-color: #e2e8f0;
             --whatsapp-color: #25d366;
             --facebook-color: #1877f2;
             --instagram-color: #e1306c;
@@ -26,146 +27,209 @@
             background-color: #ffffff;
         }
 
+        /* Modern Navigation Styling inspired by WNS */
         header {
             background-color: #ffffff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            padding: 15px 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 20px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .logo {
             font-size: 22px;
-            font-weight: bold;
+            font-weight: 700;
             color: var(--primary-color);
+            letter-spacing: -0.5px;
         }
 
         .header-right {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 30px;
+        }
+
+        .nav-links-container {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links-container a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links-container a:hover {
+            color: var(--secondary-color);
+        }
+
+        .social-icons-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 1px solid var(--border-color);
+            padding-left: 15px;
         }
 
         .social-icons-header a {
-            font-size: 26px;
-            margin-left: 15px;
+            font-size: 20px;
             text-decoration: none;
-            display: inline-block;
+            transition: opacity 0.2s;
         }
+        .social-icons-header a:hover { opacity: 0.8; }
 
         .social-icons-header .bi-whatsapp { color: var(--whatsapp-color); }
         .social-icons-header .bi-facebook { color: var(--facebook-color); }
         .social-icons-header .bi-instagram { color: var(--instagram-color); }
 
         .cta-btn {
-            background-color: var(--secondary-color);
+            background-color: var(--primary-color);
             color: white;
             padding: 10px 20px;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 4px;
             font-weight: bold;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+        .cta-btn:hover {
+            background-color: #1e293b;
         }
 
-        /* Hero Section */
+        /* Premium Corporate Hero Section Layout */
         .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.85)), url('office.jpg.png');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 60px 5%;
-            text-align: center;
+            padding: 100px 8%;
+            text-align: left;
+        }
+
+        .hero-content {
+            max-width: 800px;
         }
 
         .hero h1 {
-            font-size: 36px;
-            margin-bottom: 15px;
+            font-size: 42px;
+            line-height: 1.2;
+            margin: 0 0 20px 0;
+            font-weight: 700;
         }
 
         .hero p {
             font-size: 18px;
-            max-width: 800px;
-            margin: 0 auto 30px;
+            margin: 0 0 35px 0;
+            opacity: 0.9;
+            line-height: 1.5;
         }
 
-        /* Interactive Tabs Styling */
+        .cta-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--whatsapp-color);
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+        .cta-whatsapp:hover {
+            background-color: #1ebd58;
+        }
+
+        /* Interactive Dynamic Grid Matrix Services Styling */
         .services-section {
-            padding: 60px 5%;
-            background-color: #ffffff;
-            text-align: center;
+            padding: 80px 8%;
+            background-color: #f8fafc;
         }
 
         .section-title {
-            font-size: 30px;
+            font-size: 32px;
             color: var(--primary-color);
-            margin-bottom: 5px;
-            font-weight: bold;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            text-align: center;
         }
 
         .section-subtitle {
             font-size: 16px;
-            margin-bottom: 40px;
+            margin: 0 0 50px 0;
             color: #64748b;
+            text-align: center;
         }
 
-        /* The Tab row buttons */
         .tabs-container {
             display: flex;
             justify-content: center;
             gap: 10px;
             flex-wrap: wrap;
             max-width: 1000px;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px;
         }
 
         .tab-btn {
-            background-color: var(--light-bg);
+            background-color: #ffffff;
             color: var(--text-color);
-            border: 1px solid #cbd5e1;
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            padding: 10px 22px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 4px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .tab-btn:hover {
             background-color: #f1f5f9;
+            border-color: #cbd5e1;
         }
 
         .tab-btn.active {
-            background-color: var(--secondary-color);
+            background-color: var(--primary-color);
             color: white;
-            border-color: var(--secondary-color);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            border-color: var(--primary-color);
         }
 
-        /* Tab content content wrapper */
+        /* Styled Service Panels with upper border color markers */
         .tab-content-wrapper {
-            max-width: 800px;
-            margin: 0 auto 40px;
-            background: var(--light-bg);
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 30px;
-            text-align: left;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .tab-panel {
             display: none;
+            background: #ffffff;
+            border-top: 4px solid var(--primary-color);
+            border-radius: 4px;
+            padding: 40px;
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
         }
 
         .tab-panel.active {
             display: block;
-            animation: fadeIn 0.4s ease;
+            animation: fadeIn 0.3s ease-out;
         }
 
         .tab-panel h3 {
-            color: var(--secondary-color);
-            margin-top: 0;
+            color: var(--primary-color);
+            margin: 0 0 20px 0;
             font-size: 24px;
-            margin-bottom: 15px;
+            font-weight: 700;
         }
 
         .tab-panel ul {
@@ -174,103 +238,123 @@
         }
 
         .tab-panel li {
-            font-size: 17px;
-            margin-bottom: 12px;
+            font-size: 16px;
+            margin-bottom: 14px;
+            color: #4a5568;
+            line-height: 1.5;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5deg); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Gallery Section mapped to your specific files */
+        /* Modern Gallery Grid Section Layout */
         .gallery-section {
-            background-color: var(--light-bg);
-            padding: 60px 5%;
+            background-color: #ffffff;
+            padding: 80px 8%;
             text-align: center;
-            border-top: 1px solid #e2e8f0;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .gallery-item {
             background: #ffffff;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Classes used for interactive gallery filtering */
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+        }
+
         .gallery-item.hidden {
             display: none;
         }
 
         .gallery-item img {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: contain;
             background-color: #ffffff;
-            border-radius: 4px;
+            border-radius: 2px;
             display: block;
         }
 
         .gallery-item p {
-            margin: 8px 0 0 0;
-            font-size: 14px;
-            font-weight: bold;
+            margin: 15px 0 0 0;
+            font-size: 15px;
+            font-weight: 600;
             color: var(--primary-color);
         }
 
-        /* Contact Section */
+        /* Corporate Split Layout Contact Box Section */
         .contact-section {
-            background-color: #ffffff;
-            padding: 60px 5%;
+            background-color: var(--light-bg);
+            padding: 80px 8%;
             text-align: center;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
         }
 
         .address, .phone {
-            font-size: 18px;
-            margin: 15px 0;
+            font-size: 17px;
+            margin: 20px 0;
+            color: #4a5568;
         }
 
         .phone a {
             color: var(--secondary-color);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
         }
+        .phone a:hover { text-decoration: underline; }
 
-        /* Footer Section */
+        /* Unified High Contrast Footer Block */
         footer {
             background-color: var(--primary-color);
             color: white;
-            padding: 40px 5%;
+            padding: 40px 8%;
             text-align: center;
         }
 
         .social-links-footer {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .social-links-footer a {
             color: white;
             text-decoration: none;
-            font-size: 32px;
-            margin: 0 15px;
+            font-size: 26px;
+            margin: 0 12px;
             display: inline-block;
+            opacity: 0.8;
+            transition: opacity 0.2s;
         }
+        .social-links-footer a:hover { opacity: 1; }
 
         footer p {
             margin: 0;
             font-size: 14px;
-            opacity: 0.7;
+            opacity: 0.6;
         }
     </style>
 </head>
@@ -279,6 +363,11 @@
     <header>
         <div class="logo">Dwarkadhish Accounting Center</div>
         <div class="header-right">
+            <ul class="nav-links-container">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
             <div class="social-icons-header">
                 <a href="https://wa.me/919724185433" target="_blank" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
                 <a href="https://www.facebook.com/share/19JRCbjtgh/" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
@@ -289,19 +378,21 @@
     </header>
 
     <section class="hero">
-        <h1>Financial, Insurance, Investment & Government Services</h1>
-        <p>Your comprehensive center for ITR Filing, Mutual Funds, Life & General Insurance, and essential Government Registrations in Rajkot.</p>
-        <a href="https://wa.me/919724185433" target="_blank" class="cta-btn" style="background-color: var(--whatsapp-color); display: inline-flex; align-items: center; gap: 10px; border: none;">
-            <i class="bi bi-whatsapp"></i> Chat on WhatsApp
-        </a>
+        <div class="hero-content">
+            <h1>Financial, Insurance, Investment & Government Services</h1>
+            <p>Your comprehensive center for ITR Filing, Mutual Funds, Life & General Insurance, and essential Government Registrations in Rajkot.</p>
+            <a href="https://wa.me/919724185433" target="_blank" class="cta-whatsapp">
+                <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
     </section>
 
-    <!-- Interactive Services Section -->
-    <section class="services-section">
+    <!-- Interactive Services Section Layout -->
+    <section id="services" class="services-section">
         <div class="section-title">Our Specialized Services</div>
         <div class="section-subtitle">Click on any category tab below to view full details and service document cards.</div>
         
-        <!-- Interactive Navigation Tabs -->
+        <!-- Interactive Navigation Tabs Elements -->
         <div class="tabs-container">
             <button class="tab-btn active" onclick="switchTab(event, 'all')">All Services</button>
             <button class="tab-btn" onclick="switchTab(event, 'tax')">ITR & Tax</button>
@@ -311,15 +402,15 @@
             <button class="tab-btn" onclick="switchTab(event, 'identity')">Identity Cards</button>
         </div>
 
-        <!-- Information Panels Box -->
+        <!-- Information Panels Box Containers -->
         <div class="tab-content-wrapper">
-            <!-- Panel All -->
+            <!-- Panel All Component -->
             <div id="panel-all" class="tab-panel active">
                 <h3>Complete Business Solutions</h3>
-                <p style="font-size: 16px; margin: 0 0 10px 0;">Welcome to Dwarkadhish Accounting Center. We offer complete financial growth management, taxation filing setups, risk protections, and state-level registration solutions. Click any tab filter above to narrow down updates or explore your documents.</p>
+                <p style="font-size: 16px; margin: 0 0 10px 0; color: #4a5568; line-height: 1.6;">Welcome to Dwarkadhish Accounting Center. We offer complete financial growth management, taxation filing setups, risk protections, and state-level registration solutions. Click any tab filter above to narrow down updates or explore your documents.</p>
             </div>
 
-            <!-- Panel Tax -->
+            <!-- Panel Tax Component -->
             <div id="panel-tax" class="tab-panel">
                 <h3>Taxation & Business Compliance</h3>
                 <ul>
@@ -329,7 +420,7 @@
                 </ul>
             </div>
 
-            <!-- Panel Insurance -->
+            <!-- Panel Insurance Component -->
             <div id="panel-insurance" class="tab-panel">
                 <h3>Comprehensive Insurance Protection</h3>
                 <ul>
@@ -339,7 +430,7 @@
                 </ul>
             </div>
 
-            <!-- Panel Investment -->
+            <!-- Panel Investment Component -->
             <div id="panel-investment" class="tab-panel">
                 <h3>SIP & Investment Consultations</h3>
                 <ul>
@@ -349,7 +440,7 @@
                 </ul>
             </div>
 
-            <!-- Panel RTO -->
+            <!-- Panel RTO Component -->
             <div id="panel-rto" class="tab-panel">
                 <h3>RTO Assistance & Business Registration</h3>
                 <ul>
@@ -359,7 +450,7 @@
                 </ul>
             </div>
 
-            <!-- Panel Identity -->
+            <!-- Panel Identity Component -->
             <div id="panel-identity" class="tab-panel">
                 <h3>Identity Cards & Government Document Management</h3>
                 <ul>
@@ -370,8 +461,8 @@
         </div>
     </section>
 
-    <!-- Gallery Grid Mapped to your exact files with category data attributes -->
-    <section class="gallery-section">
+    <!-- Gallery Grid Mapped Containers -->
+    <section id="gallery" class="gallery-section">
         <div class="section-title">Our Service Gallery</div>
         <div class="section-subtitle">Visual materials and verified configuration formats for our primary services.</div>
         <div class="gallery-grid" id="galleryGrid">
@@ -410,16 +501,18 @@
         </div>
     </section>
 
-    <section class="contact-section">
+    <section id="contact" class="contact-section">
         <div class="section-title">Contact Us</div>
-        <p>Get in touch or visit our office to get your applications processed fast.</p>
-        <div class="phone">
-            <strong>Mobile Number: </strong><a href="tel:+919724185433">9724185433</a>
-        </div>
-        <div class="address">
-            <strong>Office Address: </strong><br>
-            305, VV Commercial Complex, Bhutkhana Chowk,<br>
-            Near ST Bus Station, Rajkot, Gujarat 360002
+        <div class="section-subtitle">Get in touch or visit our office to get your applications processed fast.</div>
+        <div class="contact-wrapper">
+            <div class="phone">
+                <strong>Mobile Number: </strong><a href="tel:+919724185433">9724185433</a>
+            </div>
+            <div class="address">
+                <strong>Office Address: </strong><br>
+                305, VV Commercial Complex, Bhutkhana Chowk,<br>
+                Near ST Bus Station, Rajkot, Gujarat 360002
+            </div>
         </div>
     </section>
 
@@ -432,7 +525,7 @@
         <p>&copy; 2026 Dwarkadhish Accounting Center. All Rights Reserved.</p>
     </footer>
 
-    <!-- Interactive Tabs script logic -->
+    <!-- Interactive Tabs script logic blocks -->
     <script>
         function switchTab(event, categoryId) {
             // 1. Manage Active Tab Buttons Styling
@@ -448,7 +541,6 @@
             if (selectedPanel) {
                 selectedPanel.classList.add('active');
             } else {
-                // If it's 'all' tab, we fall back to general panel
                 document.getElementById('panel-all').classList.add('active');
             }
 
