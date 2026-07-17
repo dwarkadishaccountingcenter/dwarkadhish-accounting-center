@@ -354,7 +354,7 @@
         .social-links-footer a:hover { opacity: 1; color: var(--secondary-color); }
         footer p { font-size: 14px; opacity: 0.6; }
 
-        /* --- FLOATING INTERACTIVE LOGO BRANDING --- */
+        /* --- FLOATING INTERACTIVE LOGO BRANDING (Desktop Style) --- */
         .floating-brand-logo {
             position: fixed;
             bottom: 30px;
@@ -416,19 +416,9 @@
             .nav-links-container { justify-content: center; }
             .social-icons-header { border-left: none; padding-left: 0; }
             
-            /* Slight adjustment to ensure it doesn't overlap essential mobile views */
+            /* Hides the floating logo on screens smaller than 768px to keep mobile view clean */
             .floating-brand-logo {
-                bottom: 20px;
-                right: 20px;
-                padding: 12px 18px;
-            }
-            .floating-brand-logo .brand-icon {
-                width: 32px;
-                height: 32px;
-                font-size: 16px;
-            }
-            .floating-brand-logo .brand-text {
-                font-size: 12px;
+                display: none !important;
             }
         }
     </style>
