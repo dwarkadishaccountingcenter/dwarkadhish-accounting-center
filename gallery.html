@@ -190,6 +190,8 @@
         .gallery-item[data-category="rto"] { border-top: 4px solid #ec4899; }
         .gallery-item[data-category="pancard"] { border-top: 4px solid #8b5cf6; }
         .gallery-item[data-category="demat"] { border-top: 4px solid #06b6d4; }
+        .gallery-item[data-category="udyam"] { border-top: 4px solid #f97316; }
+        .gallery-item[data-category="passport"] { border-top: 4px solid #3b82f6; }
 
         .item-category-tag {
             font-size: 11px;
@@ -347,9 +349,11 @@
             <button class="filter-btn" onclick="filterServices('rto')">RTO Work</button>
             <button class="filter-btn" onclick="filterServices('pancard')">PAN Card</button>
             <button class="filter-btn" onclick="filterServices('demat')">Demat Account</button>
+            <button class="filter-btn" onclick="filterServices('udyam')">Udyam Registration</button>
+            <button class="filter-btn" onclick="filterServices('passport')">Passport Services</button>
         </div>
 
-        <!-- Portfolio Items -->
+        <!-- Portfolio Grid -->
         <div class="gallery-grid" id="portfolioGrid">
             
             <!-- Insurance Card -->
@@ -362,7 +366,6 @@
                     <li>Cashless Health Protection Policies</li>
                     <li>High-Sum Assured Term Life Frameworks</li>
                 </ul>
-                <!-- Added Insurance Photo Below -->
                 <div class="service-image-container">
                     <img src="images/insurance.jpeg" alt="Insurance Protection Services">
                 </div>
@@ -382,7 +385,6 @@
                     <li>Ledger Reconciliation Reporting</li>
                     <li>Comprehensive Capital Gains Auditing</li>
                 </ul>
-                <!-- Added ITR Photo Below -->
                 <div class="service-image-container">
                     <img src="images/itr.jpeg" alt="Income Tax Return Filing">
                 </div>
@@ -402,7 +404,6 @@
                     <li>Diversified Portfolio Allocations</li>
                     <li>Tax-Saving Mutual Fund Schemes</li>
                 </ul>
-                <!-- Added SIP Photo Below -->
                 <div class="service-image-container">
                     <img src="images/sip.jpeg" alt="SIP & Mutual Fund Investment">
                 </div>
@@ -422,9 +423,8 @@
                     <li>Driving License Application Setups</li>
                     <li>Permit & Fitness Renewals</li>
                 </ul>
-                <!-- Added RTO Photo Below -->
                 <div class="service-image-container">
-                    <img src="images/rto.jpeg" alt="RTO Services">
+                    <img src="images/driving.jpg.jpeg" alt="RTO Services">
                 </div>
                 <div class="gallery-btn-group">
                     <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20RTO%20services" target="_blank" class="action-link primary">Process File</a>
@@ -442,9 +442,8 @@
                     <li>Name & Date Correction Auditing</li>
                     <li>Aadhaar-PAN Linkage Services</li>
                 </ul>
-                <!-- Added PAN Card Photo Below -->
                 <div class="service-image-container">
-                    <img src="images/pancard.jpg.jpeg" alt="PAN Card Services">
+                    <img src="images/pan.jpg.jpeg" alt="PAN Card Services">
                 </div>
                 <div class="gallery-btn-group">
                     <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20PAN%20Card%20services" target="_blank" class="action-link primary">Get Started</a>
@@ -462,12 +461,49 @@
                     <li>Direct Equity Trading Support</li>
                     <li>Zero Balance Maintenance Options</li>
                 </ul>
-                <!-- Added Demat Photo Below -->
                 <div class="service-image-container">
-                    <img src="images/demat.jpg" alt="Demat Account Opening">
+                    <img src="images/demat.jpeg" alt="Demat Account Opening">
                 </div>
                 <div class="gallery-btn-group">
                     <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20opening%20a%20Demat%20Account" target="_blank" class="action-link primary">Open Account</a>
+                    <a href="tel:+919724185433" class="action-link secondary">Inquire</a>
+                </div>
+            </div>
+
+            <!-- Udyam Registration Card -->
+            <div class="gallery-item" data-category="udyam">
+                <span class="item-category-tag">Business Setup</span>
+                <h3>MSME / Udyam Registration</h3>
+                <p>Seamless registration for micro, small, and medium businesses to unlock crucial government benefits.</p>
+                <ul>
+                    <li>Quick MSME Certificate Generation</li>
+                    <li>Access to Collateral-Free Bank Loans</li>
+                    <li>Eligibility for Special Subsidies & Benefits</li>
+                </ul>
+                <div class="service-image-container">
+                    <img src="images/udyam.jpg.png" alt="Udyam Registration">
+                </div>
+                <div class="gallery-btn-group">
+                    <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20Udyam%20Registration" target="_blank" class="action-link primary">Register Now</a>
+                    <a href="tel:+919724185433" class="action-link secondary">Inquire</a>
+                </div>
+            </div>
+
+            <!-- Passport Card -->
+            <div class="gallery-item" data-category="passport">
+                <span class="item-category-tag">Travel Services</span>
+                <h3>Passport Documentation</h3>
+                <p>Comprehensive assistance with application processing and structural document checklists.</p>
+                <ul>
+                    <li>Fresh & Re-issue Applications</li>
+                    <li>Tatkaal Expedited Processing Setup</li>
+                    <li>Step-by-Step Document Verification</li>
+                </ul>
+                <div class="service-image-container">
+                    <img src="images/passport.jpg.jpeg" alt="Passport Application Assistance">
+                </div>
+                <div class="gallery-btn-group">
+                    <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20Passport%20services" target="_blank" class="action-link primary">Apply Online</a>
                     <a href="tel:+919724185433" class="action-link secondary">Inquire</a>
                 </div>
             </div>
@@ -506,7 +542,7 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             const currentHash = window.location.hash.replace('#', '').toLowerCase();
-            const standardCategories = ['insurance', 'itr', 'sip', 'rto', 'pancard', 'demat'];
+            const standardCategories = ['insurance', 'itr', 'sip', 'rto', 'pancard', 'demat', 'udyam', 'passport'];
             
             if (standardCategories.includes(currentHash)) {
                 filterServices(currentHash);
