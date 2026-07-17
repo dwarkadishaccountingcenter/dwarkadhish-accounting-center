@@ -486,7 +486,93 @@ footer p {
     font-size: 14px;
     opacity: 0.6;
 }
+/* --- Infinite Partner Logo Slider --- */
+.partner-slider-section {
+    background-color: #0b0f19; /* Matches your --card-bg color */
+    padding: 60px 8%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
 
+.slider-title {
+    font-size: 24px;
+    color: var(--headline-color);
+    margin-bottom: 40px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+/* Outer viewport container */
+.logo-slider-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+}
+
+/* Elegant dark-mode gradient fades on the left and right edges */
+.logo-slider-container::before,
+.logo-slider-container::after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 150px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.logo-slider-container::before {
+    left: 0;
+    top: 0;
+    background: linear-gradient(to right, #030712 0%, rgba(3, 7, 18, 0) 100%);
+}
+
+.logo-slider-container::after {
+    right: 0;
+    top: 0;
+    background: linear-gradient(to left, #030712 0%, rgba(3, 7, 18, 0) 100%);
+}
+
+/* The track holding the logos moving left continuously */
+.logo-slide-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 60px; /* Space between each logo */
+    animation: scrollLogos 25s linear infinite; /* Seamless speed */
+    width: max-content;
+}
+
+/* Individual logo wrapper */
+.logo-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling the actual logo images */
+.logo-slide img {
+    height: 45px; /* Consistent height for a clean look */
+    width: auto;
+    object-fit: contain;
+    opacity: 0.85; /* Blend into dark mode */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.logo-slide img:hover {
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+/* Smooth Infinite Scrolling Animation */
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Loop point at exactly half-way */
+    }
+}
 /* Responsive Fixes for Small Screen Displays */
 @media (max-width: 991px) {
     .hero {
