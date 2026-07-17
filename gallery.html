@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Gallery | Dwarkadhish Accounting Center Rajkot</title>
-    <meta name="description" content="View our gallery at Dwarkadhish Accounting Center in Rajkot. Proudly serving local clients with professional ITR filing, GST compliance, and accounting services.">
-    <meta name="keywords" content="Accounting center Rajkot gallery, ITR in Rajkot photos, tax consultant Rajkot, GST accounting Rajkot office, financial services Rajkot">
-    <!-- Bootstrap Icons for UI arrows and icons -->
+    <title>Service Portfolio | Dwarkadhish Accounting Center</title>
+    
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
     <style>
-        /* Global Variables & Reset */
+        /* Global Reset and Variables - Cohesive Dark Mode */
         :root {
-            --bg-color: #030712; /* Deep premium black/gray background */
+            --bg-color: #030712;
             --card-bg: #0b0f19;
-            --primary-color: #0f172a; 
-            --secondary-color: #0284c7; /* Brand Blue */
-            --border-color: rgba(255, 255, 255, 0.07);
-            --text-color: #cbd5e1;
+            --primary-color: #090d16;
+            --secondary-color: #0284c7;
+            --text-color: #9ca3af;
             --headline-color: #ffffff;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --whatsapp-color: #25d366;
+            --facebook-color: #1877f2;
+            --instagram-color: #e1306c;
         }
 
         * {
@@ -29,16 +31,17 @@
 
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
             line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
             overflow-x: hidden;
         }
 
-        /* Premium Header Styling */
+        /* Modern Navigation Styling */
         header {
-            background-color: #090d16;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background-color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             padding: 20px 8%;
             display: flex;
             justify-content: space-between;
@@ -48,369 +51,431 @@
             z-index: 100;
         }
 
-        header h1 {
-            font-size: 20px;
+        .logo {
+            font-size: 22px;
             font-weight: 700;
             color: var(--headline-color);
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        header a {
-            color: #94a3b8;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            transition: color 0.3s;
-        }
-
-        header a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* Container & Titles */
-        .container {
-            width: 88%;
-            max-width: 1400px;
-            margin: auto;
-            padding: 60px 0;
-            position: relative;
-        }
-
-        .gallery-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        h2 {
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--headline-color);
-            margin-bottom: 10px;
             letter-spacing: -0.5px;
         }
 
-        .subtitle {
-            color: #9ca3af;
-            font-size: 16px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* --- THE SONY-STYLE MOVING GRID LINES BACKGROUND --- */
-        .grid-lines-bg {
-            position: absolute;
-            top: 180px;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        /* Vertical static grid lines */
-        .grid-line {
-            border-left: 1px solid var(--border-color);
-            position: relative;
-            height: 100%;
-        }
-
-        .grid-line:last-child {
-            border-right: 1px solid var(--border-color);
-        }
-
-        /* Moving laser line indicator effect */
-        .grid-line::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -1px;
-            width: 2px;
-            height: 80px;
-            background: linear-gradient(to bottom, transparent, var(--secondary-color), transparent);
-            animation: lineMove 8s infinite linear;
-        }
-
-        /* Offset animations for an organic moving effect across columns */
-        .grid-line:nth-child(2)::before { animation-delay: 2s; }
-        .grid-line:nth-child(3)::before { animation-delay: 4s; }
-        .grid-line:nth-child(4)::before { animation-delay: 6s; }
-
-        @keyframes lineMove {
-            0% { top: -10%; }
-            100% { top: 110%; }
-        }
-
-        /* Premium Dark-Mode Gallery Grid */
-        .gallery {
-            position: relative;
-            z-index: 2; /* Sits cleanly over back lines */
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        .header-right {
+            display: flex;
+            align-items: center;
             gap: 30px;
         }
 
-        /* Card Container mimicking the reference image */
-        .gallery-item {
-            position: relative;
-            height: 380px;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .nav-links-container {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        .nav-links-container a {
+            text-decoration: none;
+            color: #94a3b8;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links-container a:hover,
+        .nav-links-container a.active {
+            color: var(--secondary-color);
+        }
+
+        .social-icons-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 1px solid var(--border-color);
+            padding-left: 15px;
+        }
+
+        .social-icons-header a {
+            font-size: 20px;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .social-icons-header a:hover { opacity: 0.8; }
+        .social-icons-header .bi-whatsapp { color: var(--whatsapp-color); }
+        .social-icons-header .bi-facebook { color: var(--facebook-color); }
+        .social-icons-header .bi-instagram { color: var(--instagram-color); }
+
+        /* Gallery Filter Section */
+        .gallery-section {
+            padding: 80px 8%;
+            background-color: var(--bg-color);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 36px;
+            color: var(--headline-color);
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            margin-bottom: 50px;
+            color: #64748b;
+        }
+
+        /* Dedicated Service Filter Bar */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto 50px;
+        }
+
+        .filter-btn {
             background-color: var(--card-bg);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 10px 22px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 4px;
             cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        /* Portfolio Grid Display */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Specialized Styling scoped to specific service cards */
+        .gallery-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: left;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item.hidden {
+            display: none !important;
         }
 
         .gallery-item:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             border-color: var(--secondary-color);
-            box-shadow: 0 12px 30px rgba(2, 132, 199, 0.2);
+            box-shadow: 0 12px 25px rgba(2, 132, 199, 0.15);
         }
 
-        /* Images with dark grading overlay compatibility */
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            filter: brightness(0.75) contrast(1.1);
-            transition: transform 0.5s ease;
-        }
+        /* Categorized Visual Treatments */
+        .gallery-item[data-category="insurance"] { border-top: 4px solid var(--secondary-color); }
+        .gallery-item[data-category="itr"] { border-top: 4px solid #10b981; }
+        .gallery-item[data-category="sip"] { border-top: 4px solid #f59e0b; }
+        .gallery-item[data-category="rto"] { border-top: 4px solid #ec4899; }
+        .gallery-item[data-category="pancard"] { border-top: 4px solid #8b5cf6; }
+        .gallery-item[data-category="demat"] { border-top: 4px solid #06b6d4; }
 
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Elegant Gradient Overlays for Text */
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 60%;
-            background: linear-gradient(to top, rgba(3, 7, 18, 1) 0%, rgba(3, 7, 18, 0.8) 50%, rgba(3, 7, 18, 0) 100%);
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            text-align: left;
-        }
-
-        .gallery-overlay h4 {
-            color: var(--headline-color);
-            font-size: 18px;
+        .item-category-tag {
+            font-size: 11px;
+            text-transform: uppercase;
             font-weight: 700;
-            line-height: 1.4;
-            margin-bottom: 12px;
-        }
-
-        /* Action link matching 'Read More' style arrow */
-        .gallery-link {
+            letter-spacing: 1px;
             color: var(--secondary-color);
+        }
+
+        .gallery-item h3 {
+            color: var(--headline-color);
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .gallery-item p {
             font-size: 14px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: color 0.2s ease;
+            color: var(--text-color);
+            line-height: 1.6;
         }
 
-        .gallery-item:hover .gallery-link {
-            color: #38bdf8;
+        .gallery-item ul {
+            padding-left: 20px;
+            font-size: 14px;
         }
 
-        /* Modernized Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(3, 7, 18, 0.95);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            backdrop-filter: blur(5px);
+        .gallery-item li {
+            margin-bottom: 8px;
         }
 
-        .lightbox img {
-            max-width: 85%;
-            max-height: 85vh;
-            border-radius: 12px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            animation: zoomIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        .gallery-btn-group {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
         }
 
-        @keyframes zoomIn {
-            from { transform: scale(0.95); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        /* Unified Footer */
-        footer {
-            background: #090d16;
-            color: #64748b;
+        .action-link {
+            flex: 1;
             text-align: center;
-            padding: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 8px 0;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .action-link.primary {
+            background-color: var(--whatsapp-color);
+            color: white;
+        }
+
+        .action-link.secondary {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--headline-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .action-link:hover { opacity: 0.9; }
+
+        /* Unified High Contrast Footer Block */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 40px 8%;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
             margin-top: 60px;
-            font-size: 14px;
         }
 
-        /* Responsiveness adjustments */
-        @media (max-width: 991px) {
-            .grid-lines-bg {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .grid-line:nth-child(3), .grid-line:nth-child(4) {
-                display: none;
-            }
+        .social-links-footer { margin-bottom: 20px; }
+        .social-links-footer a {
+            color: white;
+            text-decoration: none;
+            font-size: 26px;
+            margin: 0 12px;
+            display: inline-block;
+            opacity: 0.8;
+            transition: opacity 0.2s;
         }
+        .social-links-footer a:hover { opacity: 1; color: var(--secondary-color); }
+        footer p { font-size: 14px; opacity: 0.6; }
 
+        /* Responsive displays */
         @media (max-width: 768px) {
             header {
+                padding: 15px 5%;
                 flex-direction: column;
-                gap: 12px;
-                padding: 15px;
+                gap: 15px;
             }
-            h2 {
-                font-size: 28px;
+            .header-right {
+                flex-direction: column;
+                width: 100%;
             }
-            .grid-lines-bg {
-                display: none; /* Turn off moving line elements on mobile for performance */
-            }
+            .nav-links-container { justify-content: center; }
+            .social-icons-header { border-left: none; padding-left: 0; }
         }
     </style>
 </head>
-
 <body>
 
+    <!-- Premium Dark Header -->
     <header>
-        <h1>DWARKADHISH ACCOUNTING CENTER</h1>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="gallery.html" style="color: var(--secondary-color);">Gallery</a>
-        </nav>
+        <div class="logo">Dwarkadhish Accounting Center</div>
+        <div class="header-right">
+            <ul class="nav-links-container">
+                <li><a href="index.html">Services</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+            </ul>
+            <div class="social-icons-header">
+                <a href="https://wa.me/919724185433" target="_blank" class="bi bi-whatsapp"></a>
+                <a href="https://www.facebook.com/share/1axT14rC5b/" target="_blank" class="bi bi-facebook"></a>
+                <a href="https://www.instagram.com/dwarkadhishaaccounting?igsh=NXhkbG1pNG0yMnZs" target="_blank" class="bi bi-instagram"></a>
+            </div>
+        </div>
     </header>
 
-    <div class="container">
-        
-        <!-- Live Moving Background Lines -->
-        <div class="grid-lines-bg">
-            <div class="grid-line"></div>
-            <div class="grid-line"></div>
-            <div class="grid-line"></div>
-            <div class="grid-line"></div>
+    <!-- Dynamic Portfolio Section -->
+    <section class="gallery-section">
+        <h2 class="section-title">Explore Specialized Options</h2>
+        <p class="section-subtitle">Select a category below to filter exact requirements instantly.</p>
+
+        <!-- Filter Controls -->
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterServices('all')">All Options</button>
+            <button class="filter-btn" onclick="filterServices('insurance')">Insurance Plans</button>
+            <button class="filter-btn" onclick="filterServices('itr')">ITR Filing</button>
+            <button class="filter-btn" onclick="filterServices('sip')">SIP & Mutual Funds</button>
+            <button class="filter-btn" onclick="filterServices('rto')">RTO Work</button>
+            <button class="filter-btn" onclick="filterServices('pancard')">PAN Card</button>
+            <button class="filter-btn" onclick="filterServices('demat')">Demat Account</button>
         </div>
 
-        <div class="gallery-header">
-            <h2>Shaping Your Financial Future</h2>
-            <p class="subtitle">Browse through our legal document formats, secure registration schemes, and service brochures.</p>
+        <!-- Portfolio Items -->
+        <div class="gallery-grid" id="portfolioGrid">
+            
+            <!-- Insurance Card -->
+            <div class="gallery-item" data-category="insurance">
+                <span class="item-category-tag">Insurance Protection</span>
+                <h3>Comprehensive Risk Coverage</h3>
+                <p>Complete asset and lifecycle security management tools tailored for immediate configuration.</p>
+                <ul>
+                    <li>Two-Wheeler & Commercial Vehicle coverages</li>
+                    <li>Cashless Health Protection Policies</li>
+                    <li>High-Sum Assured Term Life Frameworks</li>
+                </ul>
+                <div class="gallery-btn-group">
+                    <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20Insurance%20services" target="_blank" class="action-link primary">Apply Now</a>
+                    <a href="tel:+919724185433" class="action-link secondary">Inquire</a>
+                </div>
+            </div>
+
+            <!-- ITR Card -->
+            <div class="gallery-item" data-category="itr">
+                <span class="item-category-tag">ITR & Accounting</span>
+                <h3>Tax Return Compliance</h3>
+                <p>Strategic individual and commercial accounting audits minimizing processing friction.</p>
+                <ul>
+                    <li>Salaried & Business ITR Processing</li>
+                    <li>Ledger Reconciliation Reporting</li>
+                    <li>Comprehensive Capital Gains Auditing</li>
+                </ul>
+                <div class="gallery-btn-group">
+                    <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20ITR%20filing" target="_blank" class="action-link primary">File Return</a>
+                    <a href="tel:+919724185433" class="action-link secondary">Inquire</a>
+                </div>
+            </div>
+
+            <!-- SIP Card -->
+            <div class="gallery-item" data-category="sip">
+                <span class="item-category-tag">SIP & Funds</span>
+                <h3>Systematic Wealth Generation</h3>
+                <p>Optimized market allocations balanced through risk profiles targeted toward target parameters.</p>
+                <ul>
+                    <li>Automated Monthly Equity SIP Setups</li>
+                    <li>Diversified Portfolio Allocations</li>
+                    <li>Tax-Saving Mutual Fund Schemes</li>
+                </ul>
+                <div class="gallery-btn-group">
+                    <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20SIP%20Investments" target="_blank" class="action-link primary">Invest Now</a>
+                    <a href="tel:+919724185433" class="action-link secondary">Inquire</a>
+                </div>
+            </div>
+
+            <!-- RTO Card -->
+            <div class="gallery-item" data-category="rto">
+                <span class="item-category-tag">RTO Management</span>
+                <h3>Vehicle Document Processing</h3>
+                <p>Accelerated operational licensing and regulatory clearing solutions across multiple profiles.</p>
+                <ul>
+                    <li>Ownership Transfer Documentation</li>
+                    <li>Driving License Application Setups</li>
+                    <li>Permit & Fitness Renewals</li>
+                </ul>
+                <div class="gallery-btn-group">
+                    <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20RTO%20services" target="_blank" class="action-link primary">Process File</a>
+                    <a href="tel:+919724185433" class="action-link secondary">Inquire</a>
+                </div>
+            </div>
+
+            <!-- PAN Card Card -->
+            <div class="gallery-item" data-category="pancard">
+                <span class="item-category-tag">Identity Services</span>
+                <h3>PAN Application & Fixes</h3>
+                <p>Direct updates or new document configurations optimized through prompt identity registries.</p>
+                <ul>
+                    <li>Fresh PAN Processing Setup</li>
+                    <li>Name & Date Correction Auditing</li>
+                    <li>Aadhaar-PAN Linkage Services</li>
+                </ul>
+                <div class="gallery-btn-group">
+                    <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20PAN%20Card%20services" target="_blank" class="action-link primary">Get Started</a>
+                    <a href="tel:+919724185433" class="action-link secondary">Inquire</a>
+                </div>
+            </div>
+
+            <!-- Demat Card -->
+            <div class="gallery-item" data-category="demat">
+                <span class="item-category-tag">Trading Accounts</span>
+                <h3>Demat Access Configurations</h3>
+                <p>Rapid deployment setups allowing access across security channels and capital allocation paths.</p>
+                <ul>
+                    <li>Instant Online Account Opening</li>
+                    <li>Direct Equity Trading Support</li>
+                    <li>Zero Balance Maintenance Options</li>
+                </ul>
+                <div class="gallery-btn-group">
+                    <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20opening%20a%20Demat%20Account" target="_blank" class="action-link primary">Open Account</a>
+                    <a href="tel:+919724185433" class="action-link secondary">Inquire</a>
+                </div>
+            </div>
+
         </div>
+    </section>
 
-        <div class="gallery">
-            <!-- Item 1 -->
-            <div class="gallery-item" onclick="show('office.jpg.png')">
-                <img src="office.jpg.png" alt="Office Infrastructure">
-                <div class="gallery-overlay">
-                    <h4>Professional Workspace & Client Assistance Hub</h4>
-                    <span class="gallery-link">Maximize View <i class="bi bi-arrow-up-right"></i></span>
-                </div>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="gallery-item" onclick="show('udyam.jpg.png')">
-                <img src="udyam.jpg.png" alt="Udyam Registration">
-                <div class="gallery-overlay">
-                    <h4>MSME Udyam Certifications & Business Setup</h4>
-                    <span class="gallery-link">Maximize View <i class="bi bi-arrow-up-right"></i></span>
-                </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="gallery-item" onclick="show('pan.jpg.jpeg')">
-                <img src="pan.jpg.jpeg" alt="PAN Card Services">
-                <div class="gallery-overlay">
-                    <h4>PAN Card Applications & Document Rectification</h4>
-                    <span class="gallery-link">Maximize View <i class="bi bi-arrow-up-right"></i></span>
-                </div>
-            </div>
-
-            <!-- Item 4 -->
-            <div class="gallery-item" onclick="show('sip.jpg.png')">
-                <img src="sip.jpg.png" alt="SIP Investments">
-                <div class="gallery-overlay">
-                    <h4>Systematic Wealth Accumulation via SIP Schemes</h4>
-                    <span class="gallery-link">Maximize View <i class="bi bi-arrow-up-right"></i></span>
-                </div>
-            </div>
-
-            <!-- Item 5 -->
-            <div class="gallery-item" onclick="show('passport.jpg.jpeg')">
-                <img src="passport.jpg.jpeg" alt="Passport Services">
-                <div class="gallery-overlay">
-                    <h4>Passport Application Assistance & Documentation</h4>
-                    <span class="gallery-link">Maximize View <i class="bi bi-arrow-up-right"></i></span>
-                </div>
-            </div>
-
-            <!-- Item 6 -->
-            <div class="gallery-item" onclick="show('insurance.jpg.jpeg')">
-                <img src="insurance.jpg.jpeg" alt="Insurance Services">
-                <div class="gallery-overlay">
-                    <h4>Two-Wheeler, Private Car, Life & Health Insurances</h4>
-                    <span class="gallery-link">Maximize View <i class="bi bi-arrow-up-right"></i></span>
-                </div>
-            </div>
-
-            <!-- Item 7 -->
-            <div class="gallery-item" onclick="show('driving.jpg.jpeg')">
-                <img src="driving.jpg.jpeg" alt="Driving License">
-                <div class="gallery-overlay">
-                    <h4>Driving License File Setup & RTO Consultations</h4>
-                    <span class="gallery-link">Maximize View <i class="bi bi-arrow-up-right"></i></span>
-                </div>
-            </div>
-
-            <!-- Item 8 -->
-            <div class="gallery-item" onclick="show('demat.jpg.png')">
-                <img src="demat.jpg.png" alt="Demat Account">
-                <div class="gallery-overlay">
-                    <h4>Secure Demat Processing for Equity Allocations</h4>
-                    <span class="gallery-link">Maximize View <i class="bi bi-arrow-up-right"></i></span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Lightbox Modal -->
-    <div class="lightbox" id="lightbox" onclick="hide()">
-        <img id="popup">
-    </div>
-
+    <!-- Clean Premium Footer -->
     <footer>
-        &copy; 2026 DWARKADHISH ACCOUNTING CENTER | Rajkot
+        <div class="social-links-footer">
+            <a href="https://wa.me/919724185433" target="_blank" class="bi bi-whatsapp"></a>
+            <a href="https://www.facebook.com/share/1axT14rC5b/" target="_blank" class="bi bi-facebook"></a>
+            <a href="https://www.instagram.com/dwarkadhishaaccounting?igsh=NXhkbG1pNG0yMnZs" target="_blank" class="bi bi-instagram"></a>
+        </div>
+        <p>&copy; 2026 Dwarkadhish Accounting Center | Rajkot</p>
     </footer>
 
+    <!-- JavaScript Hash Routing Engine -->
     <script>
-        function show(src) {
-            document.getElementById("lightbox").style.display = "flex";
-            document.getElementById("popup").src = src;
+        function filterServices(category) {
+            // Update active state of button
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Highlight right button based on standard parameters
+            const currentBtn = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes(category));
+            if (currentBtn) currentBtn.classList.add('active');
+
+            // Toggle dynamic filtering over layout elements
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
         }
 
-        function hide() {
-            document.getElementById("lightbox").style.display = "none";
-        }
+        // Automatic Check for external anchor hashes on load (e.g. gallery.html#insurance)
+        window.addEventListener('DOMContentLoaded', () => {
+            const currentHash = window.location.hash.replace('#', '').toLowerCase();
+            const standardCategories = ['insurance', 'itr', 'sip', 'rto', 'pancard', 'demat'];
+            
+            if (standardCategories.includes(currentHash)) {
+                filterServices(currentHash);
+            } else {
+                filterServices('all');
+            }
+        });
+
+        // Listen for internal clicks that change anchor targets dynamic live updates
+        window.addEventListener('hashchange', () => {
+            const currentHash = window.location.hash.replace('#', '').toLowerCase();
+            if (currentHash) filterServices(currentHash);
+        });
     </script>
-
 </body>
 </html>
