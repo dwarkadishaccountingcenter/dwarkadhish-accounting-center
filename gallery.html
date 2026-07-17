@@ -153,7 +153,7 @@
         /* Portfolio Grid Display */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
@@ -214,10 +214,34 @@
         .gallery-item ul {
             padding-left: 20px;
             font-size: 14px;
+            margin-bottom: 10px;
         }
 
         .gallery-item li {
             margin-bottom: 8px;
+        }
+
+        /* Responsive Image Styling Box inside the layout */
+        .service-image-container {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.02);
+            margin: 10px 0;
+        }
+
+        .service-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .service-image-container img {
+            transform: scale(1.05);
         }
 
         .gallery-btn-group {
@@ -338,6 +362,10 @@
                     <li>Cashless Health Protection Policies</li>
                     <li>High-Sum Assured Term Life Frameworks</li>
                 </ul>
+                <!-- Added Insurance Photo Below -->
+                <div class="service-image-container">
+                    <img src="images/insurance.jpg" alt="Insurance Protection Services">
+                </div>
                 <div class="gallery-btn-group">
                     <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20Insurance%20services" target="_blank" class="action-link primary">Apply Now</a>
                     <a href="tel:+919724185433" class="action-link secondary">Inquire</a>
@@ -354,6 +382,10 @@
                     <li>Ledger Reconciliation Reporting</li>
                     <li>Comprehensive Capital Gains Auditing</li>
                 </ul>
+                <!-- Added ITR Photo Below -->
+                <div class="service-image-container">
+                    <img src="images/itr.jpg" alt="Income Tax Return Filing">
+                </div>
                 <div class="gallery-btn-group">
                     <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20ITR%20filing" target="_blank" class="action-link primary">File Return</a>
                     <a href="tel:+919724185433" class="action-link secondary">Inquire</a>
@@ -370,6 +402,10 @@
                     <li>Diversified Portfolio Allocations</li>
                     <li>Tax-Saving Mutual Fund Schemes</li>
                 </ul>
+                <!-- Added SIP Photo Below -->
+                <div class="service-image-container">
+                    <img src="images/sip.jpg" alt="SIP & Mutual Fund Investment">
+                </div>
                 <div class="gallery-btn-group">
                     <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20SIP%20Investments" target="_blank" class="action-link primary">Invest Now</a>
                     <a href="tel:+919724185433" class="action-link secondary">Inquire</a>
@@ -386,6 +422,10 @@
                     <li>Driving License Application Setups</li>
                     <li>Permit & Fitness Renewals</li>
                 </ul>
+                <!-- Added RTO Photo Below -->
+                <div class="service-image-container">
+                    <img src="images/rto.jpg" alt="RTO Services">
+                </div>
                 <div class="gallery-btn-group">
                     <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20RTO%20services" target="_blank" class="action-link primary">Process File</a>
                     <a href="tel:+919724185433" class="action-link secondary">Inquire</a>
@@ -402,6 +442,10 @@
                     <li>Name & Date Correction Auditing</li>
                     <li>Aadhaar-PAN Linkage Services</li>
                 </ul>
+                <!-- Added PAN Card Photo Below -->
+                <div class="service-image-container">
+                    <img src="images/pancard.jpg" alt="PAN Card Services">
+                </div>
                 <div class="gallery-btn-group">
                     <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20PAN%20Card%20services" target="_blank" class="action-link primary">Get Started</a>
                     <a href="tel:+919724185433" class="action-link secondary">Inquire</a>
@@ -418,6 +462,10 @@
                     <li>Direct Equity Trading Support</li>
                     <li>Zero Balance Maintenance Options</li>
                 </ul>
+                <!-- Added Demat Photo Below -->
+                <div class="service-image-container">
+                    <img src="images/demat.jpg" alt="Demat Account Opening">
+                </div>
                 <div class="gallery-btn-group">
                     <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20opening%20a%20Demat%20Account" target="_blank" class="action-link primary">Open Account</a>
                     <a href="tel:+919724185433" class="action-link secondary">Inquire</a>
@@ -440,15 +488,12 @@
     <!-- JavaScript Hash Routing Engine -->
     <script>
         function filterServices(category) {
-            // Update active state of button
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
             
-            // Highlight right button based on standard parameters
             const currentBtn = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes(category));
             if (currentBtn) currentBtn.classList.add('active');
 
-            // Toggle dynamic filtering over layout elements
             const items = document.querySelectorAll('.gallery-item');
             items.forEach(item => {
                 if (category === 'all' || item.getAttribute('data-category') === category) {
@@ -459,7 +504,6 @@
             });
         }
 
-        // Automatic Check for external anchor hashes on load (e.g. gallery.html#insurance)
         window.addEventListener('DOMContentLoaded', () => {
             const currentHash = window.location.hash.replace('#', '').toLowerCase();
             const standardCategories = ['insurance', 'itr', 'sip', 'rto', 'pancard', 'demat'];
@@ -471,7 +515,6 @@
             }
         });
 
-        // Listen for internal clicks that change anchor targets dynamic live updates
         window.addEventListener('hashchange', () => {
             const currentHash = window.location.hash.replace('#', '').toLowerCase();
             if (currentHash) filterServices(currentHash);
