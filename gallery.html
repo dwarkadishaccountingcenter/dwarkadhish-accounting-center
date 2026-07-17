@@ -232,6 +232,7 @@
             border: 1px solid var(--border-color);
             background: rgba(255, 255, 255, 0.02);
             margin: 10px 0;
+            cursor: zoom-in;
         }
 
         .service-image-container img {
@@ -277,6 +278,58 @@
         }
 
         .action-link:hover { opacity: 0.9; }
+
+        /* --- LIGHTBOX FULLSCREEN MODAL STYLES --- */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(3, 7, 18, 0.95);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-color);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-modal.show .lightbox-content {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+            user-select: none;
+        }
+
+        .lightbox-close:hover {
+            color: var(--secondary-color);
+        }
 
         /* Unified High Contrast Footer Block */
         footer {
@@ -367,7 +420,7 @@
                     <li>High-Sum Assured Term Life Frameworks</li>
                 </ul>
                 <div class="service-image-container">
-                    <img src="images/insurance.jpeg" alt="Insurance Protection Services">
+                    <img src="insurance.jpeg" alt="Insurance Protection Services" onclick="openLightbox(this.src)">
                 </div>
                 <div class="gallery-btn-group">
                     <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20Insurance%20services" target="_blank" class="action-link primary">Apply Now</a>
@@ -386,7 +439,7 @@
                     <li>Comprehensive Capital Gains Auditing</li>
                 </ul>
                 <div class="service-image-container">
-                    <img src="images/itr.jpeg" alt="Income Tax Return Filing">
+                    <img src="itr.jpeg" alt="Income Tax Return Filing" onclick="openLightbox(this.src)">
                 </div>
                 <div class="gallery-btn-group">
                     <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20ITR%20filing" target="_blank" class="action-link primary">File Return</a>
@@ -405,7 +458,7 @@
                     <li>Tax-Saving Mutual Fund Schemes</li>
                 </ul>
                 <div class="service-image-container">
-                    <img src="images/sip.jpeg" alt="SIP & Mutual Fund Investment">
+                    <img src="sip.jpeg" alt="SIP & Mutual Fund Investment" onclick="openLightbox(this.src)">
                 </div>
                 <div class="gallery-btn-group">
                     <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20SIP%20Investments" target="_blank" class="action-link primary">Invest Now</a>
@@ -424,7 +477,7 @@
                     <li>Permit & Fitness Renewals</li>
                 </ul>
                 <div class="service-image-container">
-                    <img src="images/driving.jpg.jpeg" alt="RTO Services">
+                    <img src="driving.jpg.jpeg" alt="RTO Services" onclick="openLightbox(this.src)">
                 </div>
                 <div class="gallery-btn-group">
                     <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20RTO%20services" target="_blank" class="action-link primary">Process File</a>
@@ -443,7 +496,7 @@
                     <li>Aadhaar-PAN Linkage Services</li>
                 </ul>
                 <div class="service-image-container">
-                    <img src="images/pan.jpg.jpeg" alt="PAN Card Services">
+                    <img src="pan.jpg.jpeg" alt="PAN Card Services" onclick="openLightbox(this.src)">
                 </div>
                 <div class="gallery-btn-group">
                     <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20PAN%20Card%20services" target="_blank" class="action-link primary">Get Started</a>
@@ -462,7 +515,7 @@
                     <li>Zero Balance Maintenance Options</li>
                 </ul>
                 <div class="service-image-container">
-                    <img src="images/demat.jpeg" alt="Demat Account Opening">
+                    <img src="demat.jpeg" alt="Demat Account Opening" onclick="openLightbox(this.src)">
                 </div>
                 <div class="gallery-btn-group">
                     <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20opening%20a%20Demat%20Account" target="_blank" class="action-link primary">Open Account</a>
@@ -481,7 +534,7 @@
                     <li>Eligibility for Special Subsidies & Benefits</li>
                 </ul>
                 <div class="service-image-container">
-                    <img src="images/udyam.jpg.png" alt="Udyam Registration">
+                    <img src="udyam.jpg.png" alt="Udyam Registration" onclick="openLightbox(this.src)">
                 </div>
                 <div class="gallery-btn-group">
                     <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20Udyam%20Registration" target="_blank" class="action-link primary">Register Now</a>
@@ -500,7 +553,7 @@
                     <li>Step-by-Step Document Verification</li>
                 </ul>
                 <div class="service-image-container">
-                    <img src="images/passport.jpg.jpeg" alt="Passport Application Assistance">
+                    <img src="passport.jpg.jpeg" alt="Passport Application Assistance" onclick="openLightbox(this.src)">
                 </div>
                 <div class="gallery-btn-group">
                     <a href="https://wa.me/919724185433?text=I%20am%20interested%20in%20Passport%20services" target="_blank" class="action-link primary">Apply Online</a>
@@ -510,6 +563,12 @@
 
         </div>
     </section>
+
+    <!-- Fullscreen Lightbox Modal -->
+    <div id="lightbox" class="lightbox-modal" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Enlarged view">
+    </div>
 
     <!-- Clean Premium Footer -->
     <footer>
@@ -521,8 +580,9 @@
         <p>&copy; 2026 Dwarkadhish Accounting Center | Rajkot</p>
     </footer>
 
-    <!-- JavaScript Hash Routing Engine -->
+    <!-- JavaScript Filter & Lightbox Engine -->
     <script>
+        // Filter functionality
         function filterServices(category) {
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
@@ -538,6 +598,21 @@
                     item.classList.add('hidden');
                 }
             });
+        }
+
+        // Fullscreen Lightbox triggers
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = src;
+            lightbox.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Stop page scrolling background
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('show');
+            document.body.style.overflow = ''; // Restore scrolling
         }
 
         window.addEventListener('DOMContentLoaded', () => {
