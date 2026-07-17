@@ -367,6 +367,92 @@
             color: #38bdf8;
         }
 
+        /* --- Slim Infinite Partner Logo Slider CSS --- */
+        .partner-slider-section {
+            background-color: #0b0f19; /* Matches --card-bg */
+            padding: 30px 8%; /* Slim, low-profile padding */
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slider-title {
+            font-size: 14px;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .logo-slider-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Shadow fades on edges */
+        .logo-slider-container::before,
+        .logo-slider-container::after {
+            content: "";
+            height: 100%;
+            position: absolute;
+            width: 100px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .logo-slider-container::before {
+            left: 0;
+            top: 0;
+            background: linear-gradient(to right, #0b0f19 0%, rgba(11, 15, 25, 0) 100%);
+        }
+
+        .logo-slider-container::after {
+            right: 0;
+            top: 0;
+            background: linear-gradient(to left, #0b0f19 0%, rgba(11, 15, 25, 0) 100%);
+        }
+
+        .logo-slide-track {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 60px; /* Space between logos */
+            animation: scrollLogos 25s linear infinite;
+            width: max-content;
+        }
+
+        .logo-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .logo-slide img {
+            height: 30px; /* Forces images to be small and uniform */
+            width: auto;
+            object-fit: contain;
+            opacity: 0.7;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .logo-slide img:hover {
+            opacity: 1;
+            transform: scale(1.08);
+        }
+
+        @keyframes scrollLogos {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } /* Halfway loop point */
+        }
+
         /* Unified High Contrast Footer Block */
         footer {
             background-color: var(--primary-color);
@@ -461,7 +547,6 @@
             </ul>
             <div class="social-icons-header">
                 <a href="https://wa.me/919724185433" target="_blank" class="bi bi-whatsapp"></a>
-                <!-- Updated Facebook and Instagram links below -->
                 <a href="https://www.facebook.com/share/1axT14rC5b/" target="_blank" class="bi bi-facebook"></a>
                 <a href="https://www.instagram.com/dwarkadhishaaccounting?igsh=NXhkbG1pNG0yMnZs" target="_blank" class="bi bi-instagram"></a>
             </div>
@@ -469,7 +554,7 @@
         </div>
     </header>
 
-    <!-- Split-Layout Hero Section with Sharp HTML/CSS Info Panel -->
+    <!-- Split-Layout Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Financial, Insurance, Investment & Government Services</h1>
@@ -581,45 +666,45 @@
         </div>
     </section>
 
+    <!-- Partner Logo Slider Section (Placed Cleanly Above the Footer) -->
+    <section class="partner-slider-section">
+        <h3 class="slider-title">Partnerships That Power Smarter Wealth</h3>
+        
+        <div class="logo-slider-container">
+            <div class="logo-slide-track">
+                <!-- FIRST SET OF LOGOS -->
+                <div class="logo-slide"><img src="lic.png" alt="LIC"></div>
+                <div class="logo-slide"><img src="hdfcergo.png" alt="HDFC Ergo"></div>
+                <div class="logo-slide"><img src="tataaig.png" alt="Tata AIG"></div>
+                <div class="logo-slide"><img src="tataaia.png" alt="Tata AIA"></div>
+                <div class="logo-slide"><img src="iciciinsu.png" alt="ICICI Insurance"></div>
+                <div class="logo-slide"><img src="sbimf.jpg" alt="SBI Mutual Fund"></div>
+                <div class="logo-slide"><img src="icicimf.jpg" alt="ICICI Mutual Fund"></div>
+                <div class="logo-slide"><img src="nipon.png" alt="Nippon India Mutual Fund"></div>
+                <div class="logo-slide"><img src="motilallogo.png" alt="Motilal Oswal"></div>
+
+                <!-- DUPLICATE SET OF LOGOS (For continuous horizontal looping) -->
+                <div class="logo-slide"><img src="lic.png" alt="LIC"></div>
+                <div class="logo-slide"><img src="hdfcergo.png" alt="HDFC Ergo"></div>
+                <div class="logo-slide"><img src="tataaig.png" alt="Tata AIG"></div>
+                <div class="logo-slide"><img src="tataaia.png" alt="Tata AIA"></div>
+                <div class="logo-slide"><img src="iciciinsu.png" alt="ICICI Insurance"></div>
+                <div class="logo-slide"><img src="sbimf.jpg" alt="SBI Mutual Fund"></div>
+                <div class="logo-slide"><img src="icicimf.jpg" alt="ICICI Mutual Fund"></div>
+                <div class="logo-slide"><img src="nipon.png" alt="Nippon India Mutual Fund"></div>
+                <div class="logo-slide"><img src="motilallogo.png" alt="Motilal Oswal"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Clean Premium Footer -->
     <footer>
         <div class="social-links-footer">
             <a href="https://wa.me/919724185433" target="_blank" class="bi bi-whatsapp"></a>
-            <!-- Updated Facebook and Instagram links below -->
             <a href="https://www.facebook.com/share/1axT14rC5b/" target="_blank" class="bi bi-facebook"></a>
             <a href="https://www.instagram.com/dwarkadhishaaccounting?igsh=NXhkbG1pNG0yMnZs" target="_blank" class="bi bi-instagram"></a>
         </div>
         <p>&copy; 2026 Dwarkadhish Accounting Center | Rajkot</p>
-        <!-- Partner Logo Slider Section -->
-<section class="partner-slider-section">
-    <h3 class="slider-title">Partnerships That Power Smarter Wealth</h3>
-    
-    <div class="logo-slider-container">
-        <div class="logo-slide-track">
-            <!-- FIRST SET OF LOGOS -->
-            <div class="logo-slide"><img src="lic.png" alt="LIC"></div>
-            <div class="logo-slide"><img src="hdfcergo.png" alt="HDFC Ergo"></div>
-            <div class="logo-slide"><img src="tataaig.png" alt="Tata AIG"></div>
-            <div class="logo-slide"><img src="tataaia.png" alt="Tata AIA"></div>
-            <div class="logo-slide"><img src="iciciinsu.png" alt="ICICI Insurance"></div>
-            <div class="logo-slide"><img src="sbimf.jpg" alt="SBI Mutual Fund"></div>
-            <div class="logo-slide"><img src="icicimf.jpg" alt="ICICI Mutual Fund"></div>
-            <div class="logo-slide"><img src="nipon.png" alt="Nippon India Mutual Fund"></div>
-            <div class="logo-slide"><img src="motilallogo.png" alt="Motilal Oswal"></div>
-
-            <!-- DUPLICATE SET OF LOGOS (Required for perfect continuous looping) -->
-            <div class="logo-slide"><img src="lic.png" alt="LIC"></div>
-            <div class="logo-slide"><img src="hdfcergo.png" alt="HDFC Ergo"></div>
-            <div class="logo-slide"><img src="tataaig.png" alt="Tata AIG"></div>
-            <div class="logo-slide"><img src="tataaia.png" alt="Tata AIA"></div>
-            <div class="logo-slide"><img src="iciciinsu.png" alt="ICICI Insurance"></div>
-            <div class="logo-slide"><img src="sbimf.jpg" alt="SBI Mutual Fund"></div>
-            <div class="logo-slide"><img src="icicimf.jpg" alt="ICICI Mutual Fund"></div>
-            <div class="logo-slide"><img src="nipon.png" alt="Nippon India Mutual Fund"></div>
-            <div class="logo-slide"><img src="motilallogo.png" alt="Motilal Oswal"></div>
-        </div>
-    </div>
-</section>
     </footer>
 
 </body>
