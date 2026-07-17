@@ -167,85 +167,121 @@
             background-color: #1ebd58;
         }
 
-        /* Fixed Sharp Rendering & Interactive Hero Image styling */
-        .hero-image-container {
+        /* Pure CSS Interactive Profile & Highlights Panel */
+        .hero-highlight-panel {
             flex: 1;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 35px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            max-width: 520px;
-            cursor: pointer;
-            position: relative;
+            gap: 25px;
+            border-top: 4px solid var(--secondary-color);
         }
 
-        .hero-image-container img {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            
-            /* Sharp rendering rules to prevent browser blur */
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-            image-rendering: auto;
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
         }
 
-        .hero-image-container:hover img {
-            transform: scale(1.02);
-            border-color: var(--secondary-color);
-        }
-
-        .zoom-hint {
-            margin-top: 12px;
-            font-size: 13px;
+        .panel-header .badge {
+            background-color: rgba(2, 132, 199, 0.15);
             color: var(--secondary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+        }
+
+        .panel-header h3 {
+            color: var(--headline-color);
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .panel-features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature-item i {
+            font-size: 20px;
+            color: var(--secondary-color);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-item h4 {
+            color: var(--headline-color);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .feature-item p {
+            color: var(--text-color);
+            font-size: 14px;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .panel-footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            margin-top: 5px;
+        }
+
+        .footer-contact {
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-weight: 600;
-            opacity: 0.8;
-            transition: opacity 0.3s;
+            gap: 10px;
+            text-decoration: none;
+            transition: transform 0.2s;
         }
 
-        .hero-image-container:hover .zoom-hint {
-            opacity: 1;
+        .footer-contact:hover {
+            transform: translateY(-2px);
         }
 
-        /* High-Definition Lightbox Modal */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(3, 7, 18, 0.96);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            backdrop-filter: blur(8px);
-            cursor: zoom-out;
+        .footer-contact i {
+            font-size: 18px;
+            color: var(--secondary-color);
         }
 
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90vh;
-            border-radius: 8px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            animation: zoomIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            
-            /* Maximum resolution rendering in lightbox */
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: auto;
+        .footer-contact .label {
+            display: block;
+            font-size: 10px;
+            color: #64748b;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
-        @keyframes zoomIn {
-            from { transform: scale(0.95); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+        .footer-contact .val {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--headline-color);
         }
 
         /* Services Grid Section */
@@ -374,9 +410,9 @@
             .hero-content {
                 max-width: 100%;
             }
-            .hero-image-container {
+            .hero-highlight-panel {
                 max-width: 480px;
-                width: 100%;
+                margin: 0 auto;
             }
         }
 
@@ -406,6 +442,10 @@
             .offering-card {
                 padding: 30px;
             }
+            .panel-footer {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
         }
     </style>
 </head>
@@ -428,7 +468,7 @@
         </div>
     </header>
 
-    <!-- Split-Layout Hero Section -->
+    <!-- Split-Layout Hero Section with Sharp HTML/CSS Info Panel -->
     <section class="hero">
         <div class="hero-content">
             <h1>Financial, Insurance, Investment & Government Services</h1>
@@ -438,10 +478,56 @@
             </a>
         </div>
         
-        <!-- Interactive Hero Image Container -->
-        <div class="hero-image-container" onclick="showPoster('office.jpg.png')">
-            <img src="office.jpg.png" alt="Dwarkadhish Services Advisory Poster">
-            <span class="zoom-hint"><i class="bi bi-zoom-in"></i> Click to view full poster details</span>
+        <!-- Interactive Service Info Panel (No more blurry text!) -->
+        <div class="hero-highlight-panel">
+            <div class="panel-header">
+                <h3>Dwarkadhish Overview</h3>
+                <span class="badge">Trusted Partner</span>
+            </div>
+            
+            <div class="panel-features">
+                <div class="feature-item">
+                    <i class="bi bi-shield-lock-fill"></i>
+                    <div>
+                        <h4>100% Confidential</h4>
+                        <p>Secure management of all financial records and personal data.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <i class="bi bi-person-workspace"></i>
+                    <div>
+                        <h4>Expert Advisory</h4>
+                        <p>Personalized insurance, RTO, and systematic investment consulting.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <i class="bi bi-lightning-charge-fill"></i>
+                    <div>
+                        <h4>Fast & Reliable</h4>
+                        <p>Prompt, error-free tax filings and government registrations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Contacts inside Hero panel -->
+            <div class="panel-footer">
+                <a href="tel:+919724185433" class="footer-contact">
+                    <i class="bi bi-telephone-fill"></i>
+                    <div>
+                        <span class="label">CALL NOW</span>
+                        <span class="val">97241 85433</span>
+                    </div>
+                </a>
+                <a href="https://wa.me/918487012618" target="_blank" class="footer-contact">
+                    <i class="bi bi-whatsapp"></i>
+                    <div>
+                        <span class="label">WHATSAPP</span>
+                        <span class="val">84870 12618</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -494,11 +580,6 @@
         </div>
     </section>
 
-    <!-- HD Lightbox Modal for Poster Zooming -->
-    <div class="lightbox" id="posterLightbox" onclick="hidePoster()">
-        <img id="posterPopup" src="" alt="Full Resolution Poster">
-    </div>
-
     <!-- Clean Premium Footer -->
     <footer>
         <div class="social-links-footer">
@@ -508,18 +589,6 @@
         </div>
         <p>&copy; 2026 Dwarkadhish Accounting Center | Rajkot</p>
     </footer>
-
-    <!-- Lightbox Script -->
-    <script>
-        function showPoster(src) {
-            document.getElementById("posterLightbox").style.display = "flex";
-            document.getElementById("posterPopup").src = src;
-        }
-
-        function hidePoster() {
-            document.getElementById("posterLightbox").style.display = "none";
-        }
-    </script>
 
 </body>
 </html>
