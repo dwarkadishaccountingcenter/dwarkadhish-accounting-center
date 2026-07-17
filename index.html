@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dwarkadhish Accounting Center | Rajkot</title>
-    <meta name="description" content="Your trusted corporate hub for professional Tax Filing (ITR), Mutual Funds advisory, Insurance plans, and RTO registrations in Rajkot.">
+    <meta name="description" content="Your trusted corporate hub for professional Tax Filing (ITR), Mutual Funds advisory, Bike, Health, & Life Insurance plans, and RTO registrations in Rajkot.">
     
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -12,12 +12,12 @@
     <style>
         /* Global Reset and Variables - Cohesive Dark Mode */
         :root {
-            --bg-color: #030712;         /* Deep premium black/gray background */
-            --card-bg: #0b0f19;          /* Sleek container dark gray */
-            --primary-color: #090d16;    /* Header & Footer background */
-            --secondary-color: #0284c7;  /* Brand sky blue */
-            --text-color: #9ca3af;       /* Soft readable gray body text */
-            --headline-color: #ffffff;   /* High-contrast crisp white titles */
+            --bg-color: #030712;         
+            --card-bg: #0b0f19;          
+            --primary-color: #090d16;    
+            --secondary-color: #0284c7;  
+            --text-color: #9ca3af;       
+            --headline-color: #ffffff;   
             --border-color: rgba(255, 255, 255, 0.08);
             --whatsapp-color: #25d366;
             --facebook-color: #1877f2;
@@ -132,7 +132,7 @@
 
         .hero-content {
             flex: 1;
-            max-width: 650px;
+            max-width: 600px;
         }
 
         .hero h1 {
@@ -167,12 +167,16 @@
             background-color: #1ebd58;
         }
 
+        /* Fixed Sharp Rendering & Interactive Hero Image styling */
         .hero-image-container {
             flex: 1;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            max-width: 500px;
+            max-width: 520px;
+            cursor: pointer;
+            position: relative;
         }
 
         .hero-image-container img {
@@ -181,9 +185,70 @@
             border-radius: 12px;
             border: 1px solid var(--border-color);
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            
+            /* Sharp rendering rules to prevent browser blur */
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: auto;
         }
 
-        /* Services Grid Section (Core Offerings Only) */
+        .hero-image-container:hover img {
+            transform: scale(1.02);
+            border-color: var(--secondary-color);
+        }
+
+        .zoom-hint {
+            margin-top: 12px;
+            font-size: 13px;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .hero-image-container:hover .zoom-hint {
+            opacity: 1;
+        }
+
+        /* High-Definition Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(3, 7, 18, 0.96);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+            cursor: zoom-out;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            animation: zoomIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* Maximum resolution rendering in lightbox */
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: auto;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Services Grid Section */
         .services-section {
             padding: 100px 8%;
             background-color: var(--bg-color);
@@ -310,7 +375,7 @@
                 max-width: 100%;
             }
             .hero-image-container {
-                max-width: 450px;
+                max-width: 480px;
                 width: 100%;
             }
         }
@@ -363,7 +428,7 @@
         </div>
     </header>
 
-    <!-- Split-Layout Hero Section with Poster -->
+    <!-- Split-Layout Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Financial, Insurance, Investment & Government Services</h1>
@@ -372,9 +437,11 @@
                 <i class="bi bi-whatsapp"></i> Chat on WhatsApp
             </a>
         </div>
-        <div class="hero-image-container">
-            <!-- Ensure this image file exists in your directory -->
+        
+        <!-- Interactive Hero Image Container -->
+        <div class="hero-image-container" onclick="showPoster('office.jpg.png')">
             <img src="office.jpg.png" alt="Dwarkadhish Services Advisory Poster">
+            <span class="zoom-hint"><i class="bi bi-zoom-in"></i> Click to view full poster details</span>
         </div>
     </section>
 
@@ -427,6 +494,11 @@
         </div>
     </section>
 
+    <!-- HD Lightbox Modal for Poster Zooming -->
+    <div class="lightbox" id="posterLightbox" onclick="hidePoster()">
+        <img id="posterPopup" src="" alt="Full Resolution Poster">
+    </div>
+
     <!-- Clean Premium Footer -->
     <footer>
         <div class="social-links-footer">
@@ -436,6 +508,18 @@
         </div>
         <p>&copy; 2026 Dwarkadhish Accounting Center | Rajkot</p>
     </footer>
+
+    <!-- Lightbox Script -->
+    <script>
+        function showPoster(src) {
+            document.getElementById("posterLightbox").style.display = "flex";
+            document.getElementById("posterPopup").src = src;
+        }
+
+        function hidePoster() {
+            document.getElementById("posterLightbox").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
