@@ -12,18 +12,18 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    margin: 0;
-    padding: 0;
     background-color: #ffffff;
 }
 
-/* Modern Navigation Styling inspired by WNS */
+/* Modern Navigation Styling */
 header {
     background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -53,8 +53,6 @@ header {
     display: flex;
     list-style: none;
     gap: 24px;
-    margin: 0;
-    padding: 0;
 }
 
 .nav-links-container a {
@@ -62,7 +60,6 @@ header {
     color: #4a5568;
     font-weight: 500;
     font-size: 15px;
-    margin: 0; /* Clears old margin values */
     transition: color 0.3s ease;
 }
 
@@ -81,7 +78,6 @@ header {
 .social-icons-header a {
     font-size: 20px;
     text-decoration: none;
-    margin: 0; /* Resets structural code layout spacing */
     transition: opacity 0.2s;
 }
 .social-icons-header a:hover { opacity: 0.8; }
@@ -115,22 +111,20 @@ header {
 
 .hero-content {
     max-width: 800px;
-    margin: 0;
 }
 
 .hero h1 {
     font-size: 42px;
     line-height: 1.2;
-    margin: 0 0 20px 0;
+    margin-bottom: 20px;
     font-weight: 700;
 }
 
 .hero p {
     font-size: 18px;
-    margin: 0 0 35px 0;
+    margin-bottom: 35px;
     opacity: 0.9;
     line-height: 1.5;
-    max-width: 100%;
 }
 
 .cta-whatsapp {
@@ -160,16 +154,14 @@ header {
 .section-title {
     font-size: 32px;
     color: var(--primary-color);
-    margin: 0 0 10px 0;
+    margin-bottom: 10px;
     font-weight: 700;
-    text-align: center;
 }
 
 .section-subtitle {
     font-size: 16px;
-    margin: 0 0 50px 0;
+    margin-bottom: 50px;
     color: #64748b;
-    text-align: center;
 }
 
 .tabs-container {
@@ -202,17 +194,12 @@ header {
     background-color: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
-    box-shadow: none; /* Clears old shadow models */
 }
 
 /* Styled Service Panels with upper border color markers */
 .tab-content-wrapper {
     max-width: 900px;
     margin: 0 auto;
-    box-shadow: none;
-    border: none;
-    background: transparent;
-    padding: 0;
 }
 
 .tab-panel {
@@ -232,14 +219,13 @@ header {
 
 .tab-panel h3 {
     color: var(--primary-color);
-    margin: 0 0 20px 0;
+    margin-bottom: 20px;
     font-size: 24px;
     font-weight: 700;
 }
 
 .tab-panel ul {
     padding-left: 20px;
-    margin: 0;
 }
 
 .tab-panel li {
@@ -290,17 +276,16 @@ header {
 
 .gallery-item img {
     width: 100%;
-    height: 200px;
+    height: auto;
+    max-height: 380px; /* Optimized scale for detailed flyer posters */
     object-fit: contain;
     background-color: #ffffff;
-    border-radius: 2px;
+    border-radius: 4px;
     display: block;
-    transition: none; /* Resets layout logic to match new framework scaling */
-    box-shadow: none;
 }
 
 .gallery-item p {
-    margin: 15px 0 0 0;
+    margin-top: 15px;
     font-size: 15px;
     font-weight: 600;
     color: var(--primary-color);
@@ -342,7 +327,6 @@ footer {
     color: white;
     padding: 40px 8%;
     text-align: center;
-    margin-top: 0;
 }
 
 .social-links-footer {
@@ -361,7 +345,6 @@ footer {
 .social-links-footer a:hover { opacity: 1; }
 
 footer p {
-    margin: 0;
     font-size: 14px;
     opacity: 0.6;
 }
