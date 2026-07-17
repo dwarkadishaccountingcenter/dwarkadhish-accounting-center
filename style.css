@@ -1,10 +1,12 @@
-/* Global Reset and Variables */
+/* Global Reset and Variables - Cohesive Dark Mode */
 :root {
-    --primary-color: #0f172a; 
-    --secondary-color: #0284c7; 
-    --text-color: #334155;
-    --light-bg: #f8fafc;
-    --border-color: #e2e8f0;
+    --bg-color: #030712;         /* Deep premium black/gray background */
+    --card-bg: #0b0f19;          /* Sleek container dark gray */
+    --primary-color: #090d16;    /* Header & Footer background */
+    --secondary-color: #0284c7;  /* Brand sky blue */
+    --text-color: #9ca3af;       /* Soft readable gray body text */
+    --headline-color: #ffffff;   /* High-contrast crisp white titles */
+    --border-color: rgba(255, 255, 255, 0.08);
     --whatsapp-color: #25d366;
     --facebook-color: #1877f2;
     --instagram-color: #e1306c;
@@ -20,13 +22,15 @@ body {
     font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: #ffffff;
+    background-color: var(--bg-color);
+    overflow-x: hidden;
 }
 
 /* Modern Navigation Styling */
 header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    background-color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     padding: 20px 8%;
     display: flex;
     justify-content: space-between;
@@ -39,7 +43,7 @@ header {
 .logo {
     font-size: 22px;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--headline-color);
     letter-spacing: -0.5px;
 }
 
@@ -57,8 +61,8 @@ header {
 
 .nav-links-container a {
     text-decoration: none;
-    color: #4a5568;
-    font-weight: 500;
+    color: #94a3b8;
+    font-weight: 600;
     font-size: 15px;
     transition: color 0.3s ease;
 }
@@ -87,7 +91,7 @@ header {
 .social-icons-header .bi-instagram { color: var(--instagram-color); }
 
 .cta-btn {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -97,16 +101,17 @@ header {
     transition: background-color 0.2s;
 }
 .cta-btn:hover {
-    background-color: #1e293b;
+    background-color: #0270a9;
     color: white;
 }
 
 /* Premium Corporate Hero Section Layout */
 .hero {
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-    color: white;
-    padding: 100px 8%;
+    background: radial-gradient(circle at top right, rgba(2, 132, 199, 0.15), transparent), var(--bg-color);
+    color: var(--headline-color);
+    padding: 120px 8%;
     text-align: left;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .hero-content {
@@ -114,17 +119,18 @@ header {
 }
 
 .hero h1 {
-    font-size: 42px;
+    font-size: 46px;
     line-height: 1.2;
     margin-bottom: 20px;
     font-weight: 700;
+    letter-spacing: -1px;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 19px;
     margin-bottom: 35px;
-    opacity: 0.9;
-    line-height: 1.5;
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
 .cta-whatsapp {
@@ -144,18 +150,20 @@ header {
     background-color: #1ebd58;
 }
 
-/* Interactive Dynamic Grid Matrix Services Styling */
+/* Interactive Services Styling */
 .services-section {
-    padding: 80px 8%;
-    background-color: #f8fafc;
+    padding: 100px 8%;
+    background-color: var(--bg-color);
     text-align: center;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .section-title {
-    font-size: 32px;
-    color: var(--primary-color);
-    margin-bottom: 10px;
+    font-size: 36px;
+    color: var(--headline-color);
+    margin-bottom: 12px;
     font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .section-subtitle {
@@ -174,7 +182,7 @@ header {
 }
 
 .tab-btn {
-    background-color: #ffffff;
+    background-color: var(--card-bg);
     color: var(--text-color);
     border: 1px solid var(--border-color);
     padding: 10px 22px;
@@ -186,17 +194,18 @@ header {
 }
 
 .tab-btn:hover {
-    background-color: #f1f5f9;
-    border-color: #cbd5e1;
+    background-color: #111827;
+    border-color: var(--secondary-color);
+    color: var(--headline-color);
 }
 
 .tab-btn.active {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: white;
-    border-color: var(--primary-color);
+    border-color: var(--secondary-color);
 }
 
-/* Styled Service Panels with upper border color markers */
+/* Styled Service Panels */
 .tab-content-wrapper {
     max-width: 900px;
     margin: 0 auto;
@@ -204,21 +213,24 @@ header {
 
 .tab-panel {
     display: none;
-    background: #ffffff;
-    border-top: 4px solid var(--primary-color);
-    border-radius: 4px;
+    background: var(--card-bg);
+    border-top: 4px solid var(--secondary-color);
+    border-radius: 8px;
     padding: 40px;
     text-align: left;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .tab-panel.active {
     display: block;
-    animation: fadeIn 0.3s ease-out;
+    animation: fadeIn 0.4s ease-out;
 }
 
 .tab-panel h3 {
-    color: var(--primary-color);
+    color: var(--headline-color);
     margin-bottom: 20px;
     font-size: 24px;
     font-weight: 700;
@@ -231,7 +243,7 @@ header {
 .tab-panel li {
     font-size: 16px;
     margin-bottom: 14px;
-    color: #4a5568;
+    color: var(--text-color);
     line-height: 1.5;
 }
 
@@ -242,32 +254,33 @@ header {
 
 /* Modern Gallery Grid Section Layout */
 .gallery-section {
-    background-color: #ffffff;
-    padding: 80px 8%;
+    background-color: var(--bg-color);
+    padding: 100px 8%;
     text-align: center;
-    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .gallery-item {
-    background: #ffffff;
+    background: var(--card-bg);
     padding: 15px;
-    border-radius: 4px;
+    border-radius: 8px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+    border-color: var(--secondary-color);
+    box-shadow: 0 12px 25px rgba(2, 132, 199, 0.15);
 }
 
 .gallery-item.hidden {
@@ -277,9 +290,8 @@ header {
 .gallery-item img {
     width: 100%;
     height: auto;
-    max-height: 380px; /* Optimized scale for detailed flyer posters */
+    max-height: 380px;
     object-fit: contain;
-    background-color: #ffffff;
     border-radius: 4px;
     display: block;
 }
@@ -288,30 +300,34 @@ header {
     margin-top: 15px;
     font-size: 15px;
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--headline-color);
 }
 
 /* Corporate Split Layout Contact Box Section */
 .contact-section {
-    background-color: var(--light-bg);
-    padding: 80px 8%;
+    background-color: var(--bg-color);
+    padding: 100px 8%;
     text-align: center;
-    border-top: 1px solid var(--border-color);
 }
 
 .contact-wrapper {
     max-width: 800px;
     margin: 0 auto;
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 4px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    background: var(--card-bg);
+    padding: 50px 40px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+.contact-section h2 {
+    color: var(--headline-color);
 }
 
 .address, .phone {
     font-size: 17px;
     margin: 20px 0;
-    color: #4a5568;
+    color: var(--text-color);
 }
 
 .phone a {
@@ -324,9 +340,10 @@ header {
 /* Unified High Contrast Footer Block */
 footer {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--text-color);
     padding: 40px 8%;
     text-align: center;
+    border-top: 1px solid var(--border-color);
 }
 
 .social-links-footer {
@@ -342,7 +359,7 @@ footer {
     opacity: 0.8;
     transition: opacity 0.2s;
 }
-.social-links-footer a:hover { opacity: 1; }
+.social-links-footer a:hover { opacity: 1; color: var(--secondary-color); }
 
 footer p {
     font-size: 14px;
@@ -371,12 +388,12 @@ footer p {
         padding-left: 0;
     }
     .hero {
-        padding: 60px 5%;
+        padding: 80px 5%;
     }
     .hero h1 {
-        font-size: 30px;
+        font-size: 32px;
     }
     .tab-panel {
-        padding: 20px;
+        padding: 25px 20px;
     }
 }
