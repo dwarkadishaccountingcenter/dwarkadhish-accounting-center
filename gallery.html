@@ -103,9 +103,11 @@
 
         /* Gallery Filter Section */
         .gallery-section {
-            padding: 80px 8%;
+            padding: 60px 8% 80px;
             background-color: var(--bg-color);
             text-align: center;
+            display: flex;
+            flex-direction: column;
         }
 
         .section-title {
@@ -118,8 +120,117 @@
 
         .section-subtitle {
             font-size: 16px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             color: #64748b;
+        }
+
+        /* --- Dwarkadhish Overview Card Styling --- */
+        .overview-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-top: 4px solid var(--secondary-color);
+            border-radius: 12px;
+            padding: 35px;
+            max-width: 650px;
+            margin: 0 auto 50px;
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .overview-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .overview-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--headline-color);
+        }
+
+        .partner-badge {
+            background-color: rgba(2, 132, 199, 0.15);
+            color: var(--secondary-color);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(2, 132, 199, 0.3);
+        }
+
+        .overview-feature-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .overview-icon-box {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            min-width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 18px;
+        }
+
+        .overview-text-box h4 {
+            color: var(--headline-color);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .overview-text-box p {
+            font-size: 13.5px;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+
+        .overview-contact-row {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
+            margin-top: 25px;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-action {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--headline-color);
+        }
+
+        .contact-action i {
+            font-size: 24px;
+        }
+
+        .contact-action .bi-telephone { color: var(--secondary-color); }
+        .contact-action .bi-whatsapp { color: var(--whatsapp-color); }
+
+        .contact-action-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #64748b;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            display: block;
+        }
+
+        .contact-action-val {
+            font-weight: 700;
+            font-size: 16px;
         }
 
         /* Dedicated Service Filter Bar */
@@ -354,7 +465,7 @@
         .social-links-footer a:hover { opacity: 1; color: var(--secondary-color); }
         footer p { font-size: 14px; opacity: 0.6; }
 
-        /* --- FLOATING INTERACTIVE LOGO BRANDING (Desktop Style) --- */
+        /* --- FLOATING INTERACTIVE LOGO BRANDING --- */
         .floating-brand-logo {
             position: fixed;
             bottom: 30px;
@@ -380,7 +491,6 @@
             background: linear-gradient(135deg, #1e293b, #0369a1);
         }
 
-        /* Large, sharp, clear circular icon marker */
         .floating-brand-logo .brand-icon {
             background-color: #ffffff;
             color: #0284c7;
@@ -402,7 +512,7 @@
             white-space: nowrap;
         }
 
-        /* Responsive displays */
+        /* Responsive Layout Overrides */
         @media (max-width: 768px) {
             header {
                 padding: 15px 5%;
@@ -416,7 +526,48 @@
             .nav-links-container { justify-content: center; }
             .social-icons-header { border-left: none; padding-left: 0; }
             
-            /* Hides the floating logo on screens smaller than 768px to keep mobile view clean */
+            /* Clean structural ordering to place overview directly below top sections */
+            .gallery-section {
+                padding: 40px 5% 60px;
+            }
+            
+            .section-title {
+                order: 1;
+            }
+            
+            .section-subtitle {
+                order: 2;
+                margin-bottom: 25px;
+            }
+
+            /* Moves the overview card to position #3, directly underneath title and header logo */
+            .overview-card {
+                order: 3;
+                width: 100%;
+                padding: 20px;
+                margin-bottom: 40px;
+            }
+
+            .filter-container {
+                order: 4;
+            }
+
+            .gallery-grid {
+                order: 5;
+            }
+
+            .overview-header-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .overview-contact-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            /* Hides floating action bar on mobile viewports */
             .floating-brand-logo {
                 display: none !important;
             }
@@ -445,6 +596,65 @@
     <section class="gallery-section">
         <h2 class="section-title">Explore Specialized Options</h2>
         <p class="section-subtitle">Select a category below to filter exact requirements instantly.</p>
+
+        <!-- Dwarkadhish Overview Card (Positioned Responsively) -->
+        <div class="overview-card">
+            <div class="overview-header-row">
+                <span class="overview-title">Dwarkadhish Overview</span>
+                <span class="partner-badge">Trusted Partner</span>
+            </div>
+            
+            <!-- Feature 1 -->
+            <div class="overview-feature-item">
+                <div class="overview-icon-box">
+                    <i class="bi bi-shield-lock-fill"></i>
+                </div>
+                <div class="overview-text-box">
+                    <h4>100% Confidential</h4>
+                    <p>Secure management of all financial records and personal data.</p>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="overview-feature-item">
+                <div class="overview-icon-box">
+                    <i class="bi bi-person-workspace"></i>
+                </div>
+                <div class="overview-text-box">
+                    <h4>Expert Advisory</h4>
+                    <p>Personalized insurance, RTO, and systematic investment consulting.</p>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="overview-feature-item">
+                <div class="overview-icon-box">
+                    <i class="bi bi-lightning-charge-fill"></i>
+                </div>
+                <div class="overview-text-box">
+                    <h4>Fast & Reliable</h4>
+                    <p>Prompt, error-free tax filings and government registrations.</p>
+                </div>
+            </div>
+
+            <!-- Contact Row -->
+            <div class="overview-contact-row">
+                <a href="tel:+919724185433" class="contact-action">
+                    <i class="bi bi-telephone"></i>
+                    <div>
+                        <span class="contact-action-label">Call Now</span>
+                        <span class="contact-action-val">97241 85433</span>
+                    </div>
+                </a>
+                <a href="https://wa.me/919724185433" target="_blank" class="contact-action">
+                    <i class="bi bi-whatsapp"></i>
+                    <div>
+                        <span class="contact-action-label">WhatsApp</span>
+                        <span class="contact-action-val">97241 85433</span>
+                    </div>
+                </a>
+            </div>
+        </div>
 
         <!-- Filter Controls -->
         <div class="filter-container">
