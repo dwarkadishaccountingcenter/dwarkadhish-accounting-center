@@ -1,152 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><meta name="description" content="View our gallery at Dwarkadhish Accounting Center in Rajkot. Proudly serving local clients with professional ITR filing, GST compliance, and accounting services.">
-<meta name="keywords" content="Accounting center Rajkot gallery, ITR in Rajkot photos, tax consultant Rajkot, GST accounting Rajkot office, financial services Rajkot"></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Gallery | Dwarkadhish Accounting Center Rajkot</title>
+    <meta name="description" content="View our gallery at Dwarkadhish Accounting Center in Rajkot. Proudly serving local clients with professional ITR filing, GST compliance, and accounting services.">
+    <meta name="keywords" content="Accounting center Rajkot gallery, ITR in Rajkot photos, tax consultant Rajkot, GST accounting Rajkot office, financial services Rajkot">
+    <!-- Bootstrap Icons for elegant UI arrows and icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        /* Global Variables & Reset */
+        :root {
+            --bg-color: #030712; /* Deep premium black/gray background */
+            --card-bg: #0b0f19;
+            --primary-color: #0f172a; 
+            --secondary-color: #0284c7; /* Brand Blue */
+            --border-color: #1f2937;
+            --text-color: #cbd5e1;
+            --headline-color: #ffffff;
+        }
 
-<style>
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    background: #f8fafc;
-    color: #1e293b;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-header {
-    background: #0f172a;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-header a {
-    color: #94a3b8;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: 600;
-    transition: color 0.3s;
-}
+        /* Premium Header Styling */
+        header {
+            background-color: #090d16;
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-header a:hover {
-    color: #fbbf24;
-}
+        header h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--headline-color);
+            letter-spacing: 0.5px;
+        }
 
-.container {
-    width: 90%;
-    margin: auto;
-    padding: 30px 0;
-}
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
 
-h2 {
-    text-align: center;
-    color: #0f172a;
-    margin-bottom: 30px;
-}
+        header a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
+        header a:hover {
+            color: var(--secondary-color);
+        }
 
-.gallery img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-}
+        /* Container & Titles */
+        .container {
+            width: 88%;
+            max-width: 1400px;
+            margin: auto;
+            padding: 60px 0;
+            text-align: center;
+        }
 
-.gallery img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--headline-color);
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
 
-footer {
-    background: #0f172a;
-    color: #cbd5e1;
-    text-align: center;
-    padding: 15px;
-    margin-top: 40px;
-}
+        .subtitle {
+            color: #9ca3af;
+            font-size: 16px;
+            margin-bottom: 50px;
+        }
 
-.lightbox{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.9);
-justify-content:center;
-align-items:center;
-}
+        /* Premium Dark-Mode Gallery Grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
 
-.lightbox img{
-max-width:90%;
-max-height:90%;
-border-radius:10px;
-}
+        /* Card Container mimicking the reference image */
+        .gallery-item {
+            position: relative;
+            height: 380px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
 
-</style>
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--secondary-color);
+            box-shadow: 0 12px 30px rgba(2, 132, 199, 0.15);
+        }
+
+        /* Images with dark grading overlay compatibility */
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.8) contrast(1.05);
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Elegant Gradient Overlays for Text */
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(to top, rgba(3, 7, 18, 1) 0%, rgba(3, 7, 18, 0.8) 50%, rgba(3, 7, 18, 0) 100%);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            text-align: left;
+        }
+
+        .gallery-overlay h4 {
+            color: var(--headline-color);
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        /* Action link matching 'Read More' style arrow */
+        .gallery-link {
+            color: var(--secondary-color);
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s ease;
+        }
+
+        .gallery-item:hover .gallery-link {
+            color: #38bdf8;
+        }
+
+        /* Modernized Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(3, 7, 18, 0.95);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .lightbox img {
+            max-width: 85%;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: zoomIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Unified Footer */
+        footer {
+            background: #090d16;
+            color: #64748b;
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            font-size: 14px;
+        }
+
+        /* Responsiveness adjustments */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
+    <header>
+        <h1>DWARKADHISH ACCOUNTING CENTER</h1>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="gallery.html" style="color: var(--secondary-color);">Gallery</a>
+        </nav>
+    </header>
 
-<h1>DWARKADHISH ACCOUNTING CENTER</h1>
+    <div class="container">
+        <h2>Shaping Your Financial Future</h2>
+        <div class="subtitle">Browse through our legal document formats, secure registration schemes, and service brochures.</div>
 
-<a href="index.html">Home</a>
-<a href="gallery.html">Gallery</a>
+        <div class="gallery">
+            <!-- Item 1 -->
+            <div class="gallery-item" onclick="show('office.jpg.png')">
+                <img src="office.jpg.png" alt="Office Infrastructure">
+                <div class="gallery-overlay">
+                    <h4>Professional Workspace & Client Assistance Hub</h4>
+                    <span class="gallery-link">Maximize View <i class="bi bi-arrow-up-right"></i></span>
+                </div>
+            </div>
 
-</header>
+            <!-- Item 2 -->
+            <div class="gallery-item" onclick="show('udyam.jpg.png')">
+                <img src="udyam.jpg.png" alt="Udyam Registration">
+                <div class="gallery-overlay">
+                    <h4>MSME Udyam Certifications & Business Setup</h4>
+                    <span class="gallery-link">Maximize View <i class="bi bi-arrow-up-right"></i></span>
+                </div>
+            </div>
 
-<div class="container">
+            <!-- Item 3 -->
+            <div class="gallery-item" onclick="show('pan.jpg.jpeg')">
+                <img src="pan.jpg.jpeg" alt="PAN Card Services">
+                <div class="gallery-overlay">
+                    <h4>PAN Card Applications & Document Rectification</h4>
+                    <span class="gallery-link">Maximize View <i class="bi bi-arrow-up-right"></i></span>
+                </div>
+            </div>
 
-<h2>Our Services Gallery</h2>
+            <!-- Item 4 -->
+            <div class="gallery-item" onclick="show('sip.jpg.png')">
+                <img src="sip.jpg.png" alt="SIP Investments">
+                <div class="gallery-overlay">
+                    <h4>Systematic Wealth Accumulation via SIP Schemes</h4>
+                    <span class="gallery-link">Maximize View <i class="bi bi-arrow-up-right"></i></span>
+                </div>
+            </div>
 
-<div class="gallery">
+            <!-- Item 5 -->
+            <div class="gallery-item" onclick="show('passport.jpg.jpeg')">
+                <img src="passport.jpg.jpeg" alt="Passport Services">
+                <div class="gallery-overlay">
+                    <h4>Passport Application Assistance & Documentation</h4>
+                    <span class="gallery-link">Maximize View <i class="bi bi-arrow-up-right"></i></span>
+                </div>
+            </div>
 
-<img src="office.jpg.png" onclick="show(this.src)">
-<img src="udyam.jpg.png" onclick="show(this.src)">
-<img src="pan.jpg.jpeg" onclick="show(this.src)">
-<img src="sip.jpg.png" onclick="show(this.src)">
-<img src="passport.jpg.jpeg" onclick="show(this.src)">
-<img src="insurance.jpg.jpeg" onclick="show(this.src)">
-<img src="driving.jpg.jpeg" onclick="show(this.src)">
-<img src="demat.jpg.png" onclick="show(this.src)">
-</div>
-</div>
+            <!-- Item 6 -->
+            <div class="gallery-item" onclick="show('insurance.jpg.jpeg')">
+                <img src="insurance.jpg.jpeg" alt="Insurance Services">
+                <div class="gallery-overlay">
+                    <h4>Two-Wheeler, Private Car, Life & Health Insurances</h4>
+                    <span class="gallery-link">Maximize View <i class="bi bi-arrow-up-right"></i></span>
+                </div>
+            </div>
 
-</div>
+            <!-- Item 7 -->
+            <div class="gallery-item" onclick="show('driving.jpg.jpeg')">
+                <img src="driving.jpg.jpeg" alt="Driving License">
+                <div class="gallery-overlay">
+                    <h4>Driving License File Setup & RTO Consultations</h4>
+                    <span class="gallery-link">Maximize View <i class="bi bi-arrow-up-right"></i></span>
+                </div>
+            </div>
 
-<div class="lightbox" id="lightbox" onclick="hide()">
-<img id="popup">
-</div>
+            <!-- Item 8 -->
+            <div class="gallery-item" onclick="show('demat.jpg.png')">
+                <img src="demat.jpg.png" alt="Demat Account">
+                <div class="gallery-overlay">
+                    <h4>Secure Demat Processing for Equity Allocations</h4>
+                    <span class="gallery-link">Maximize View <i class="bi bi-arrow-up-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<footer>
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" onclick="hide()">
+        <img id="popup">
+    </div>
 
-© 2026 DWARKADHISH ACCOUNTING CENTER | Rajkot
+    <footer>
+        &copy; 2026 DWARKADHISH ACCOUNTING CENTER | Rajkot
+    </footer>
 
-</footer>
+    <script>
+        function show(src) {
+            document.getElementById("lightbox").style.display = "flex";
+            document.getElementById("popup").src = src;
+        }
 
-<script>
-
-function show(src){
-document.getElementById("lightbox").style.display="flex";
-document.getElementById("popup").src=src;
-}
-
-function hide(){
-document.getElementById("lightbox").style.display="none";
-}
-
-</script>
+        function hide() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
