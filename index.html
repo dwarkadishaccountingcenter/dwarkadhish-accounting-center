@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Dwarkadhish Accounting Center | Rajkot</title>
     <meta name="description" content="Your trusted corporate hub for professional Tax Filing (ITR), Mutual Funds advisory, Bike, Health, & Life Insurance plans, and RTO registrations in Rajkot.">
     
@@ -12,16 +13,18 @@
     <style>
         /* Global Reset and Variables - Cohesive Dark Mode */
         :root {
-            --bg-color: #030712;         /* Deep premium black/gray background */
-            --card-bg: #0b0f19;          /* Sleek container dark gray */
-            --primary-color: #090d16;    /* Header & Footer background */
-            --secondary-color: #0284c7;  /* Brand sky blue */
-            --text-color: #9ca3af;       /* Soft readable gray body text */
-            --headline-color: #ffffff;   /* High-contrast crisp white titles */
-            --border-color: rgba(255, 255, 255, 0.08);
-            --whatsapp-color: #25d366;
-            --facebook-color: #1877f2;
-            --instagram-color: #e1306c;
+    --bg-color: #F8FAFC;
+    --card-bg: #FFFFFF;
+    --primary-color: #0B1F3A;
+    --secondary-color: #D4AF37;
+    --text-color: #475569;
+    --headline-color: #0B1F3A;
+    --border-color: #E2E8F0;
+
+    --whatsapp-color: #25D366;
+    --facebook-color: #1877F2;
+    --instagram-color: #E1306C;
+}
         }
 
         * {
@@ -31,16 +34,16 @@
         }
 
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            overflow-x: hidden;
-        }
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-color);
+}
 
         /* Modern Navigation Styling */
         header {
             background-color: var(--primary-color);
+            background: linear-gradient(135deg,#0B1F3A,#123E75);
             border-bottom: 1px solid var(--border-color);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             padding: 20px 8%;
@@ -104,24 +107,28 @@
         .social-icons-header .bi-instagram { color: var(--instagram-color); }
 
         .cta-btn {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 14px;
-            transition: background-color 0.2s;
-        }
-        .cta-btn:hover {
-            background-color: #0270a9;
-            color: white;
+    background: linear-gradient(135deg, #D4AF37, #B8860B);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #E6C65A, #D4AF37);
+    box-shadow: 0 12px 25px rgba(212, 175, 55, 0.45);
+}
         }
 
         /* Premium Split-Layout Hero Section */
         .hero {
-            background: radial-gradient(circle at top right, rgba(2, 132, 199, 0.12), transparent), var(--bg-color);
-            color: var(--headline-color);
+            background: radial-gradient(circle at top right, rgba(2,132,199,.12), transparent), var(--bg-color);
+            background: linear-gradient(135deg,#0B1F3A,#123E75);
             padding: 80px 8%;
             display: flex;
             align-items: center;
@@ -147,6 +154,7 @@
             font-size: 18px;
             margin-bottom: 35px;
             color: var(--text-color);
+            color: #E2E8F0;
             line-height: 1.6;
         }
 
@@ -305,13 +313,14 @@
         }
 
         /* Core Offerings Card Layout */
-        .offerings-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
+        .offering-card{
+    background:#fff;
+    border:none;
+    border-radius:18px;
+    padding:40px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    transition:.35s;
+}
         .offering-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -331,11 +340,10 @@
             box-shadow: 0 12px 30px rgba(2, 132, 199, 0.15);
         }
 
-        .offering-icon {
-            font-size: 36px;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
+        .offering-icon{
+    font-size:50px;
+    color:#D4AF37;
+}
 
         .offering-card h3 {
             color: var(--headline-color);
@@ -363,9 +371,11 @@
             margin-top: auto;
         }
 
-        .offering-card:hover .offering-link {
-            color: #38bdf8;
-        }
+        .offering-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 60px rgba(0,0,0,.18);
+    border-top:5px solid #D4AF37;
+}
 
         /* --- Slim Infinite Partner Logo Slider CSS --- */
         .partner-slider-section {
